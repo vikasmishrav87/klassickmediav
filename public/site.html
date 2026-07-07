@@ -973,10 +973,12 @@ function renderPortfolio() {
   const pfg = document.getElementById('pfg');
   if (pfg) pfg.innerHTML = KLASSICK_DATA.portfolioVideos.map(v => {
     const resolvedUrl = resolveVideo(v.videoUrl);
+    const posterUrl = `/video-posters/portfolio-${v.id}.jpg`;
     return `
-      <div class="pi ${v.id===1||v.id===9?'ft':''} rv ${v.delayClass}" data-c="${v.category}" onclick="VM.open('${resolvedUrl}', '${v.videoType}')">
-        <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden;">
-          <video src="${resolvedUrl}" preload="auto" muted playsinline onloadedmetadata="this.currentTime = 2;" style="width:100%; height:100%; object-fit:cover; opacity:0.85;"></video>
+      <div class="pi ${v.id===1||v.id===9?'ft':''} rv ${v.delayClass}" data-c="${v.category}" onclick="VM.open('${resolvedUrl}', '${v.videoType}', '${posterUrl}')">
+        <div class="pmedia">
+          <img class="pimg" src="${posterUrl}" alt="${v.title} video thumbnail" loading="eager" decoding="async" fetchpriority="${v.id <= 6 ? 'high' : 'auto'}">
+          <video src="${resolvedUrl}" poster="${posterUrl}" preload="auto" muted playsinline onloadedmetadata="this.currentTime = 2;" oncanplay="this.classList.add('is-ready');" onplaying="this.classList.add('is-ready');"></video>
         </div>
         <div class="pov">
           <div class="ptag">${v.clientInfo}</div>
