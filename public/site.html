@@ -989,6 +989,10 @@ function renderPortfolio() {
       </div>
     `;
   }).join('');
+  if (pfg) pfg.querySelectorAll('.pi').forEach(card => {
+    card.classList.add('vs');
+    if (typeof rvO !== 'undefined') rvO.observe(card);
+  });
 }
 
 /* HOVER VIDEO PRELOADING & PLAYBACK */
