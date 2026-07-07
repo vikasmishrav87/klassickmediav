@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klassick Media — Elite Video Production Agency</title>
+<link rel="preconnect" href="https://files.catbox.moe" crossorigin>
+<link rel="dns-prefetch" href="https://files.catbox.moe">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+:root{--k:#050508;--w:#F5F5F7;--v:#7B7FD4;--vl:#A8ABFF;--vd:#4A4D9E;--vg:rgba(123,127,212,.13);--gl:rgba(255,255,255,.035);--gb:rgba(123,127,212,.2);--acc:#FF006E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--k);color:var(--w);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;position:relative;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 50%, rgba(123,127,212,.03) 0%, transparent 50%);pointer-events:none;z-index:1;}
+
+#cur{position:fixed;width:12px;height:12px;background:var(--vl);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 20px var(--vl);}
+#cr{position:fixed;width:40px;height:40px;border:2px solid var(--v);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);box-shadow:inset 0 0 15px rgba(123,127,212,.3);}
+body.ch #cur{width:20px;height:20px;box-shadow:0 0 30px var(--vl);}
+body.ch #cr{width:60px;height:60px;border-color:var(--vl);box-shadow:inset 0 0 25px rgba(168,171,255,.4), 0 0 30px rgba(123,127,212,.5);}
+
+@media(max-width:900px){
+  #cur, #cr { display: none !important; }
+  body { cursor: auto !important; }
+  a, button, .sc, .pi, .cc, .ec, .rc, .prc, .aic { cursor: auto !important; }
+}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 4rem;background:rgba(5,5,8,.85);backdrop-filter:blur(30px);border-bottom:1px solid var(--gb);transition:all .35s;box-shadow:0 8px 32px rgba(0,0,0,.3);}
+nav.sh{padding:.7rem 4rem;background:rgba(5,5,8,.95);}
+@media(max-width:900px){nav{padding:1rem 1.5rem;}nav.sh{padding:.6rem 1.5rem;}}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.15em;background:linear-gradient(135deg,#ff006e,var(--vl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;font-weight:800;animation:glowText 3s ease-in-out infinite;}
+@keyframes glowText{0%,100%{filter:drop-shadow(0 0 0px rgba(255,0,110,.5));}50%{filter:drop-shadow(0 0 15px rgba(255,0,110,.8));}}
+.nl{display:flex;gap:2.4rem;list-style:none;}
+.nl a{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,245,247,.48);text-decoration:none;transition:all .3s;position:relative;font-weight:600;}
+.nl a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:linear-gradient(90deg,#ff006e,var(--vl));transform:scaleX(0);transform-origin:left;transition:all .35s;}
+.nl a:hover{color:var(--vl);text-shadow:0 0 10px rgba(168,171,255,.6);}
+.nl a:hover::after{transform:scaleX(1);}
+.ncta{background:linear-gradient(135deg,#ff006e,var(--vd));color:#fff;border:none;padding:.7rem 2rem;border-radius:4px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;cursor:none;font-weight:700;text-decoration:none;transition:all .3s;display:inline-block;position:relative;overflow:hidden;}
+.ncta::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
+.ncta:hover::before{transform:translateX(100%);}
+.ncta:hover{box-shadow:0 12px 40px rgba(255,0,110,.4),0 0 25px rgba(123,127,212,.3);transform:translateY(-3px);}
+
+#hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+#hc{position:absolute;inset:0;z-index:1;}
+#filmGrain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");opacity:.15;pointer-events:none;z-index:2;}
+.hcont{position:relative;z-index:3;text-align:center;max-width:1000px;padding:0 2rem;animation:slideUp 1s ease-out;}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.hbadge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.3rem;border:1.5px solid var(--gb);border-radius:100px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--vl);margin-bottom:1.8rem;background:rgba(123,127,212,.08);opacity:0;animation:badgeSlide .8s .2s forwards;}
+@keyframes badgeSlide{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+.hbadge i{width:8px;height:8px;border-radius:50%;background:#4cd98a;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,217,138,.7);}50%{box-shadow:0 0 0 8px rgba(76,217,138,0);}}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.8rem,12vw,10.5rem);line-height:.85;letter-spacing:.05em;background:linear-gradient(170deg,#ff006e 0%,#fff 25%,var(--vl) 60%,var(--vd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:0;animation:titleReveal .95s .4s forwards;text-shadow:0 0 40px rgba(255,0,110,.2);}
+@keyframes titleReveal{from{opacity:0;transform:translateY(50px) scaleY(.8);}to{opacity:1;transform:translateY(0) scaleY(1);}}
+.hsub{font-size:clamp(.9rem,1.9vw,1.15rem);color:rgba(245,245,247,.58);margin-top:1.8rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.85;opacity:0;animation:fadeInUp .8s .7s forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.hbtns{margin-top:3rem;display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeInUp .8s .95s forwards;}
+.bp{background:linear-gradient(135deg,#ff006e,var(--vd));color:#fff;padding:1rem 2.8rem;border-radius:4px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:700;transition:all .3s;display:inline-block;position:relative;overflow:hidden;}
+.bp::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
+.bp:hover::before{transform:translateX(100%);}
+.bp:hover{transform:translateY(-4px);box-shadow:0 15px 45px rgba(255,0,110,.5),0 0 30px rgba(123,127,212,.3);}
+.bs{border:2px solid var(--vl);color:var(--vl);padding:.95rem 2.8rem;border-radius:4px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;transition:all .3s;display:inline-block;background:transparent;}
+.bs:hover{background:var(--vg);border-color:#ff006e;color:#ff006e;box-shadow:0 0 25px rgba(255,0,110,.3);}
+.sind{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:0;animation:fadeIn 1s 2s forwards;z-index:3;}
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:0;transition:opacity 0.6s ease-in-out;pointer-events:none;}
+.sind span{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,245,247,.3);animation:float 3s ease-in-out infinite;}
+.sline{width:2px;height:60px;background:linear-gradient(to bottom,var(--vl),transparent);animation:slideDown 2s ease-in-out infinite;}
+@keyframes slideDown{0%{height:0;}50%{height:60px;}100%{height:0;}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+.mqw{overflow:hidden;padding:1.2rem 0;border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);background:linear-gradient(90deg,rgba(123,127,212,.01),rgba(255,0,110,.01));}
+.mqt{display:flex;gap:2.5rem;white-space:nowrap;animation:mq 35s linear infinite;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.mqi{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.18em;color:rgba(245,245,247,.2);display:flex;align-items:center;gap:2.5rem;text-transform:uppercase;font-weight:700;}
+.mqd{color:var(--v);font-size:.7rem;}
+
+section{padding:7rem 4rem;position:relative;}
+@media(max-width:900px){section{padding:5rem 1.5rem;}}
+.mx{max-width:1360px;margin:0 auto;}
+.ey{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem;font-weight:700;letter-spacing:.25em;}
+.st{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);letter-spacing:.06em;line-height:.92;margin-bottom:1.8rem;font-weight:800;}
+.sd{font-size:.98rem;color:rgba(245,245,247,.58);max-width:580px;line-height:1.88;}
+
+#stats{padding:4rem 4rem;}
+.sg{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--gb);border:1px solid var(--gb);border-radius:6px;overflow:hidden;}
+@media(max-width:900px){.sg{grid-template-columns:repeat(3,1fr);}}
+.si{background:var(--k);padding:2.5rem 1.2rem;text-align:center;transition:all .4s;border:1px solid transparent;position:relative;overflow:hidden;}
+.si::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.1),transparent);opacity:0;transition:opacity .4s;}
+.si:hover{background:var(--vg);border-color:var(--v);transform:translateY(-8px);}
+.si:hover::before{opacity:1;}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;background:linear-gradient(135deg,#ff006e,#fff,var(--vl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;}
+.sl{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,245,247,.4);margin-top:.3rem;font-weight:600;}
+
+.svgg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.8rem;}
+@media(max-width:1100px){.svgg{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:680px){.svgg{grid-template-columns:1fr;}}
+.sc{background:var(--gl);border:1px solid var(--gb);border-radius:8px;padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:all .45s;cursor:pointer;}
+.sc::before{content:'';position:absolute;top:-1px;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#ff006e,transparent);transform:scaleX(0);transition:transform .6s;}
+.sc::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%, rgba(255,0,110,.1) 0%, transparent 70%);opacity:0;transition:opacity .4s;}
+.sc:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(123,127,212,.18),0 0 30px rgba(255,0,110,.15);border-color:rgba(123,127,212,.5);}
+.sc:hover::before{transform:scaleX(1);}
+.sc:hover::after{opacity:1;}
+.scn{position:absolute;top:1.2rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:5.5rem;color:rgba(255,0,110,.08);line-height:1;font-weight:800;}
+.sci{font-size:2.4rem;margin-bottom:1.2rem;display:block;animation:iconBounce .6s ease-in-out;}
+@keyframes iconBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.sct{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.06em;margin-bottom:1rem;font-weight:700;}
+.scd{font-size:.88rem;color:rgba(245,245,247,.55);line-height:1.82;}
+.scs{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;}
+.scst{display:flex;align-items:center;gap:.8rem;font-size:.76rem;color:rgba(245,245,247,.5);transition:all .3s;}
+.scst:hover{color:var(--vl);transform:translateX(8px);}
+.scsd{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#ff006e,var(--v));flex-shrink:0;}
+
+#mv{padding:0;min-height:95vh;display:flex;align-items:center;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(38,33,115,.3) 0%,var(--k) 60%);}
+.mvi{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center;padding:7rem 4rem;max-width:1360px;margin:0 auto;width:100%;}
+@media(max-width:900px){.mvi{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}}
+.mvf{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--gb);box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 40px rgba(255,0,110,.2);aspect-ratio:16/9;animation:mvFade .8s ease-out;}
+@keyframes mvFade{from{opacity:0;transform:scale(.95);}to{opacity:1;transform:scale(1);}}
+.mvf iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.mvg{position:absolute;inset:-1px;border-radius:13px;background:linear-gradient(135deg,rgba(255,0,110,.15),transparent);pointer-events:none;box-shadow:inset 0 0 30px rgba(123,127,212,.1);}
+.mvd{margin-top:2rem;padding:1.8rem;background:linear-gradient(135deg,rgba(123,127,212,.1),rgba(255,0,110,.05));border:1px solid var(--gb);border-radius:8px;backdrop-filter:blur(10px);}
+.mvdn{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.1em;font-weight:700;}
+.mvdr{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-top:.3rem;font-weight:600;}
+.mvdd{font-size:.86rem;color:rgba(245,245,247,.5);margin-top:.9rem;line-height:1.68;}
+
+#work{background:linear-gradient(180deg,var(--k) 0%,rgba(16,13,50,.2) 100%);}
+.pff{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem;}
+.pfb{padding:.5rem 1.4rem;border-radius:4px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;cursor:none;background:transparent;border:1.5px solid rgba(245,245,247,.15);color:rgba(245,245,247,.4);transition:all .35s;font-weight:600;}
+.pfb.ac,.pfb:hover{background:linear-gradient(135deg,rgba(255,0,110,.2),rgba(123,127,212,.1));border-color:var(--vl);color:var(--vl);box-shadow:0 0 20px rgba(255,0,110,.2);}
+.pfg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+@media(max-width:900px){.pfg{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.pfg{grid-template-columns:1fr;}}
+.pi{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--gb);background:#090914;transition:all .45s;cursor:none;box-shadow:0 20px 40px rgba(0,0,0,.3);}
+.pi::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.05),transparent);opacity:0;transition:opacity .4s;z-index:3;}
+.pi:hover{transform:translateY(-8px) scale(1.018);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 35px rgba(255,0,110,.25);border-color:rgba(255,0,110,.4);}
+.pi:hover::before{opacity:1;}
+.pi.ft{grid-column:span 2;}
+@media(max-width:580px){.pi.ft{grid-column:span 1;}}
+.pi video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .45s;}
+.pi:hover video{transform:scale(1.05);}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,8,.98) 35%,rgba(5,5,8,0));display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .35s;z-index:4;}
+.pi:hover .pov{opacity:1;}
+.ptag{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#ff006e;margin-bottom:.4rem;font-weight:700;}
+.ptit{font-weight:700;font-size:1rem;margin-bottom:.2rem;}
+.pcli{font-size:.75rem;color:rgba(245,245,247,.5);}
+.pplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:65px;height:65px;border-radius:50%;background:linear-gradient(135deg,#ff006e,var(--v));display:flex;align-items:center;justify-content:center;font-size:1.5rem;opacity:0;transition:all .4s;z-index:5;box-shadow:0 15px 40px rgba(255,0,110,.4);}
+.pi:hover .pplay{opacity:1;transform:translate(-50%,-50%) scale(1.1);}
+
+#vmod{position:fixed;inset:0;z-index:9980;background:rgba(5,5,8,.98);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:2rem;animation:modalFade .3s ease-out;}
+@keyframes modalFade{from{opacity:0;}to{opacity:1;}}
+#vmod.op{display:flex;}
+.vminn{position:relative;width:100%;max-width:960px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--gb);box-shadow:0 50px 120px rgba(0,0,0,.8),0 0 50px rgba(255,0,110,.3);}
+.vminn iframe{width:100%;height:100%;border:none;}
+.vmc{position:absolute;top:-50px;right:0;background:none;border:none;color:#fff;font-size:1.8rem;cursor:none;opacity:.6;transition:all .3s;padding:.5rem;z-index:10;font-weight:300;}
+.vmc:hover{opacity:1;transform:scale(1.2);}
+
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3rem;}
+@media(max-width:900px){.cg{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.cg{grid-template-columns:1fr;}}
+.cc{border-radius:8px;overflow:hidden;border:1px solid var(--gb);position:relative;cursor:pointer;transition:all .45s;box-shadow:0 20px 45px rgba(0,0,0,.3);}
+.cc::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center, rgba(255,0,110,.1) 0%, transparent 70%);opacity:0;transition:opacity .4s;z-index:3;}
+.cc:hover{transform:scale(1.025);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 30px rgba(255,0,110,.3);}
+.cc:hover::before{opacity:1;}
+.cc video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s;}
+.cc:hover video{transform:scale(1.08);}
+.cov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,8,.95) 30%,transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .35s;z-index:4;}
+.cc:hover .cov{opacity:1;}
+.ct{font-weight:700;font-size:.95rem;}
+.cs{font-size:.7rem;color:var(--acc);margin-top:.25rem;letter-spacing:.1em;font-weight:600;}
+
+.aig{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+@media(max-width:1100px){.aig{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.aig{grid-template-columns:1fr;}}
+.aic{background:linear-gradient(135deg,rgba(255,0,110,.08),rgba(123,127,212,.1));border:1.5px solid rgba(255,0,110,.15);border-radius:8px;padding:2.2rem 2rem;position:relative;overflow:hidden;transition:all .45s;cursor:pointer;}
+.aic::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle, rgba(255,0,110,.2) 0%, transparent 70%);opacity:0;transition:opacity .4s;}
+.aic:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(255,0,110,.2),0 0 30px rgba(123,127,212,.15);border-color:rgba(255,0,110,.3);}
+.aic:hover::before{opacity:1;}
+.aic::after{content:'';position:absolute;top:-12px;right:-4px;font-family:'Bebas Neue',sans-serif;font-size:8rem;color:rgba(255,0,110,.04);line-height:1;font-weight:800;}
+.aii{font-size:2.2rem;margin-bottom:1rem;display:block;transition:transform .4s;}
+.aic:hover .aii{transform:scale(1.15) rotate(5deg);}
+.ait{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.07em;margin-bottom:.85rem;font-weight:700;}
+.aid{font-size:.88rem;color:rgba(245,245,247,.55);line-height:1.75;}
+.aita{display:inline-block;margin-top:1rem;padding:.28rem .9rem;background:linear-gradient(135deg,rgba(255,0,110,.15),rgba(123,127,212,.15));border-radius:4px;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);border:1px solid rgba(255,0,110,.25);font-weight:600;}
+
+.prw{position:relative;margin-top:4rem;}
+.prl{position:absolute;top:2.8rem;left:calc(16.66% - 8px);right:calc(16.66% - 8px);height:2px;background:linear-gradient(90deg,transparent,#ff006e,var(--v),transparent);z-index:0;}
+@media(max-width:900px){.prl{display:none;}}
+.prg{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;z-index:1;}
+@media(max-width:1100px){.prg{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:580px){.prg{grid-template-columns:repeat(2,1fr);}}
+.prs{text-align:center;padding:1.6rem 1rem;transition:all .4s;cursor:pointer;}
+.prs:hover{transform:translateY(-5px);}
+.prn{width:60px;height:60px;border-radius:50%;border:2px solid var(--v);background:var(--k);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--vl);transition:all .45s;font-weight:700;}
+.prs:hover .prn{background:linear-gradient(135deg,#ff006e,var(--v));box-shadow:0 0 30px rgba(255,0,110,.5),0 0 60px rgba(123,127,212,.3);border-color:#ff006e;transform:scale(1.15);}
+.prt{font-weight:700;font-size:.87rem;margin-bottom:.4rem;}
+.prd{font-size:.75rem;color:rgba(245,245,247,.45);line-height:1.6;}
+
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.2rem;margin-top:3rem;}
+.ec{background:var(--gl);border:1px solid var(--gb);border-radius:8px;padding:1.8rem 1.5rem;transition:all .4s;cursor:pointer;position:relative;overflow:hidden;}
+.ec::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.1),transparent);opacity:0;transition:opacity .4s;}
+.ec:hover{transform:translateY(-6px);border-color:var(--v);box-shadow:0 20px 50px rgba(123,127,212,.2),0 0 25px rgba(255,0,110,.15);}
+.ec:hover::before{opacity:1;}
+.ea{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#ff006e,var(--vl));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;margin-bottom:1rem;font-weight:700;box-shadow:0 8px 25px rgba(255,0,110,.3);}
+.en{font-weight:700;font-size:.95rem;margin-bottom:.25rem;}
+.ee{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:.45rem;font-weight:600;}
+.et{font-size:.73rem;color:rgba(245,245,247,.45);line-height:1.6;}
+
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+@media(max-width:1100px){.rg{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.rg{grid-template-columns:1fr;}}
+.rc{background:var(--gl);border:1px solid var(--gb);border-radius:8px;padding:2.2rem 2rem;transition:all .45s;cursor:pointer;position:relative;overflow:hidden;}
+.rc::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,0,110,.1) 0%, transparent 70%);opacity:0;transition:opacity .4s;}
+.rc:hover{transform:translateY(-8px);border-color:rgba(255,0,110,.4);box-shadow:0 25px 60px rgba(123,127,212,.18),0 0 30px rgba(255,0,110,.2);}
+.rc:hover::before{opacity:1;}
+.rq{font-family:'Playfair Display',serif;font-size:3.5rem;color:rgba(255,0,110,.2);line-height:1;margin-bottom:.9rem;}
+.rt{font-size:.9rem;color:rgba(245,245,247,.72);line-height:1.82;font-style:italic;}
+.rs{color:#ffd60a;margin-top:1.2rem;letter-spacing:.12em;font-weight:600;}
+.ra{margin-top:1.2rem;display:flex;align-items:center;gap:1rem;}
+.rav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#ff006e,var(--vl));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;flex-shrink:0;font-weight:700;}
+.ran{font-weight:700;font-size:.9rem;}
+.rar{font-size:.7rem;color:rgba(245,245,247,.42);text-transform:uppercase;letter-spacing:.08em;}
+.rav2{font-size:.65rem;color:#4cd98a;margin-top:.25rem;font-weight:600;}
+
+#imp{background:linear-gradient(135deg,rgba(255,0,110,.08),rgba(123,127,212,.06));border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);}
+.impin{display:grid;grid-template-columns:1fr 1.35fr;gap:5rem;align-items:center;}
+@media(max-width:900px){.impin{grid-template-columns:1fr;gap:2.5rem;}}
+.impf{background:var(--gl);border:1px solid var(--gb);border-radius:8px;padding:2.8rem 2.5rem;position:relative;overflow:hidden;}
+.impf::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.1),transparent);opacity:.5;pointer-events:none;}
+.ifl{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:.7rem;display:block;font-weight:700;position:relative;z-index:2;}
+.impf textarea,.impf select{width:100%;background:rgba(255,255,255,.05);border:1.5px solid rgba(245,245,247,.12);border-radius:6px;color:var(--w);font-family:'Inter',sans-serif;font-size:.88rem;padding:.95rem 1.1rem;outline:none;transition:all .35s;position:relative;z-index:2;}
+.impf textarea{min-height:140px;margin-bottom:.9rem;resize:vertical;}
+.impf textarea:focus,.impf select:focus{border-color:var(--vl);box-shadow:0 0 20px rgba(168,171,255,.3),inset 0 0 10px rgba(123,127,212,.1);}
+.impf textarea::placeholder{color:rgba(245,245,247,.28);}
+.impf select{appearance:none;cursor:none;margin-bottom:.9rem;padding-right:2.5rem;}
+.impf select option{background:#0c0c1e;}
+.isub{width:100%;background:linear-gradient(135deg,#ff006e,var(--vd));color:#fff;border:none;padding:1rem;border-radius:6px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;cursor:none;transition:all .35s;position:relative;z-index:2;overflow:hidden;}
+.isub::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
+.isub:hover::before{transform:translateX(100%);}
+.isub:hover{box-shadow:0 12px 35px rgba(255,0,110,.5),0 0 25px rgba(123,127,212,.3);transform:translateY(-2px);}
+.iok{margin-top:1rem;font-size:.82rem;color:#4cd98a;display:none;font-weight:600;}
+
+#pricing{background:linear-gradient(160deg,#06061a 0%,rgba(255,0,110,.05) 40%,#06061a 100%);}
+.prg2{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;}
+@media(max-width:900px){.prg2{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}}
+.prc{background:var(--gl);border:1px solid var(--gb);border-radius:8px;padding:2.8rem 2.2rem;text-align:center;position:relative;overflow:hidden;transition:all .5s;}
+.prc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.08),transparent);opacity:0;transition:opacity .4s;z-index:0;}
+.prc.ht{border-color:rgba(255,0,110,.3);background:linear-gradient(135deg,rgba(255,0,110,.12),rgba(123,127,212,.1));}
+.prc:hover{transform:translateY(-10px);box-shadow:0 30px 70px rgba(123,127,212,.2),0 0 35px rgba(255,0,110,.25);border-color:rgba(255,0,110,.4);}
+.prc:hover::before{opacity:1;}
+.prb{position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,#ff006e,var(--v));color:#fff;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .8rem;border-radius:4px;font-weight:700;z-index:2;}
+.prtier{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--acc);margin-bottom:.8rem;font-weight:700;}
+.prtt{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.07em;margin-bottom:.6rem;font-weight:800;}
+.prn2{font-size:.92rem;color:rgba(245,245,247,.35);font-style:italic;margin:.9rem 0;}
+.prfl{list-style:none;text-align:left;margin:1.6rem 0;display:flex;flex-direction:column;gap:.7rem;}
+.prfl li{font-size:.82rem;color:rgba(245,245,247,.62);display:flex;align-items:center;gap:.75rem;transition:all .3s;}
+.prfl li:hover{color:var(--vl);transform:translateX(6px);}
+.prfl li::before{content:'✦';color:var(--acc);font-size:.65rem;flex-shrink:0;}
+.prct{display:block;width:100%;background:linear-gradient(135deg,#ff006e,var(--vd));color:#fff;padding:1rem;border-radius:6px;text-decoration:none;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-top:1.8rem;transition:all .35s;position:relative;overflow:hidden;}
+.prct::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
+.prct:hover::before{transform:translateX(100%);}
+.prct:hover{box-shadow:0 15px 45px rgba(255,0,110,.5),0 0 25px rgba(123,127,212,.3);transform:translateY(-2px);}
+
+#contact{border-top:1px solid var(--gb);background:linear-gradient(135deg,rgba(16,13,50,.3),transparent);}
+.cong{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+@media(max-width:900px){.cong{grid-template-columns:1fr;gap:3rem;}}
+.wab{display:inline-flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#ff006e,var(--vd));color:#fff;padding:1.1rem 2.5rem;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:700;margin-top:2rem;transition:all .35s;box-shadow:0 8px 30px rgba(255,0,110,.3);position:relative;overflow:hidden;}
+.wab::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
+.wab:hover::before{transform:translateX(100%);}
+.wab:hover{transform:translateY(-4px);box-shadow:0 15px 45px rgba(255,0,110,.5);}
+.wab svg{width:24px;height:24px;flex-shrink:0;}
+.cii{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+.cir{display:flex;align-items:center;gap:1.1rem;padding:1.1rem 1.4rem;background:var(--gl);border:1px solid var(--gb);border-radius:8px;transition:all .3s;}
+.cir:hover{border-color:var(--v);box-shadow:0 0 20px rgba(168,171,255,.2);}
+.cil{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,245,247,.38);font-weight:600;}
+.civ{font-weight:700;font-size:.9rem;color:var(--vl);}
+.conv{background:var(--gl);border:1px solid var(--gb);border-radius:10px;padding:3.2rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.conv::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center, rgba(255,0,110,.1) 0%, transparent 70%);opacity:.5;}
+.cbig{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;background:linear-gradient(135deg,#ff006e,#fff,var(--vl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;font-weight:800;position:relative;z-index:2;}
+.ctags{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;position:relative;z-index:2;}
+.ctg{padding:.42rem 1.2rem;background:linear-gradient(135deg,rgba(255,0,110,.15),rgba(123,127,212,.15));border:1px solid rgba(255,0,110,.25);border-radius:4px;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);font-weight:600;}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;background:linear-gradient(180deg,var(--k),rgba(16,13,50,.2));}
+@media(max-width:900px){footer{padding:2.5rem 1.5rem;flex-direction:column;text-align:center;}}
+.fl{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.15em;background:linear-gradient(135deg,#ff006e,var(--w),var(--vl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;}
+.fc{font-size:.7rem;color:rgba(245,245,247,.3);letter-spacing:.1em;font-weight:600;}
+.fwa{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.35);text-decoration:none;transition:all .3s;font-weight:600;}
+.fwa:hover{color:var(--vl);}
+
+#cb{position:fixed;bottom:2rem;right:2rem;z-index:8900;}
+.ctb{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#ff006e,var(--vd));border:none;cursor:none;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 10px 35px rgba(255,0,110,.5);transition:all .35s;position:relative;animation:float 3s ease-in-out infinite;}
+.ctb:hover{transform:scale(1.15);box-shadow:0 15px 50px rgba(255,0,110,.6),0 0 30px rgba(123,127,212,.3);}
+.cpng{position:absolute;top:3px;right:3px;width:14px;height:14px;background:#4cd98a;border-radius:50%;border:2.5px solid var(--k);animation:ping 1.8s infinite;}
+@keyframes ping{0%{transform:scale(1);opacity:1;}75%{transform:scale(2.2);opacity:0;}}
+
+.cwin{position:absolute;bottom:80px;right:0;width:380px;background:#0b0b1c;border:1px solid var(--gb);border-radius:16px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.85),0 0 40px rgba(255,0,110,.2);display:none;flex-direction:column;max-height:560px;animation:slideUp .35s ease-out;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.cwin.op{display:flex;}
+@media(max-width:580px){.cwin{width:calc(100vw - 2rem);right:-0.5rem;}}
+.ch2{padding:1rem 1.2rem;background:linear-gradient(135deg,#ff006e,var(--vd));display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,0,110,.2);}
+.cha{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.chn{font-weight:700;font-size:.9rem;}
+.chs{font-size:.65rem;color:rgba(255,255,255,.7);}
+.ccl{background:none;border:none;color:#fff;cursor:none;font-size:1.2rem;margin-left:auto;opacity:.7;transition:all .3s;padding:.25rem;}
+.ccl:hover{opacity:1;transform:scale(1.15);}
+.cm{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.85rem;min-height:180px;}
+.cm::-webkit-scrollbar{width:4px;}.cm::-webkit-scrollbar-thumb{background:var(--vl);border-radius:2px;}
+.mb,.mu{max-width:85%;padding:.75rem 1rem;border-radius:10px;font-size:.82rem;line-height:1.6;word-wrap:break-word;}
+.mb{background:rgba(123,127,212,.15);border:1px solid rgba(123,127,212,.2);align-self:flex-start;border-bottom-left-radius:3px;}
+.mu{background:linear-gradient(135deg,#ff006e,var(--vd));align-self:flex-end;border-bottom-right-radius:3px;color:#fff;}
+.cty{display:none;gap:.35rem;align-items:center;padding:.75rem 1rem;background:rgba(123,127,212,.12);border-radius:10px;align-self:flex-start;border:1px solid rgba(123,127,212,.18);border-bottom-left-radius:3px;}
+.cty.sh{display:flex;}
+.cty span{width:8px;height:8px;border-radius:50%;background:var(--vl);animation:typing .9s infinite;}
+.cty span:nth-child(2){animation-delay:.15s;}
+.cty span:nth-child(3){animation-delay:.3s;}
+@keyframes typing{0%,100%{transform:translateY(0);opacity:.7;}50%{transform:translateY(-10px);opacity:1;}}
+.csug{display:flex;flex-wrap:wrap;gap:.45rem;padding:.65rem .9rem;border-top:1px solid rgba(255,0,110,.1);}
+.csg{background:rgba(255,0,110,.12);border:1px solid rgba(255,0,110,.2);border-radius:100px;padding:.35rem .9rem;font-size:.7rem;color:var(--vl);cursor:none;transition:all .25s;font-weight:600;}
+.csg:hover{background:rgba(255,0,110,.25);border-color:var(--vl);}
+.cir2{display:flex;gap:.5rem;padding:.85rem;border-top:1px solid rgba(255,0,110,.1);}
+.ci{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(245,245,247,.12);border-radius:6px;color:var(--w);font-family:'Inter',sans-serif;font-size:.82rem;padding:.7rem .95rem;outline:none;transition:all .3s;}
+.ci:focus{border-color:var(--vl);box-shadow:0 0 15px rgba(168,171,255,.3);}
+.ci::placeholder{color:rgba(245,245,247,.3);}
+.csb{background:linear-gradient(135deg,#ff006e,var(--v));color:#fff;border:none;border-radius:6px;padding:.7rem .95rem;cursor:none;font-size:.85rem;transition:all .3s;font-weight:600;}
+.csb:hover{box-shadow:0 8px 20px rgba(255,0,110,.4);}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
+.rv.vs{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes glow{0%,100%{box-shadow:0 0 10px rgba(255,0,110,.5);}50%{box-shadow:0 0 25px rgba(255,0,110,.8);}}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cr"></div>
+<div id="vmod"><div class="vminn" id="vminn"><button class="vmc" onclick="VM.close()">✕</button><video id="vmi" controls autoplay style="width:100%; height:100%; object-fit:contain; outline:none; background:#000;"></video></div></div>
+
+<nav id="nav">
+  <a href="#" class="logo">KLASSICK<span style="color:#ff006e;">.</span>MEDIA</a>
+  <ul class="nl" id="nl">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#mv">Direction</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#cinematography">Cinematography</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:klassickmedia.support@gmail.com" class="ncta">Book a Meet ✦</a>
+  <button class="hbg" id="hbg" onclick="document.getElementById('nl').classList.toggle('mo')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="hero">
+  <video id="hero-bg-video-1" class="hero-bg-video" autoplay muted playsinline></video>
+  <video id="hero-bg-video-2" class="hero-bg-video" autoplay muted playsinline></video>
+  <canvas id="hc"></canvas>
+  <div id="filmGrain"></div>
+  <div class="hcont">
+    <div class="hbadge"><i></i>Mumbai · 50+ Elite Creators · Worldwide</div>
+    <h1 class="htitle">CINEMA THAT<br>SELLS</h1>
+    <p class="hsub">From pre-production strategy to post-launch promotions. Klassick Media handles your entire video journey — concept to conversion.</p>
+    <div class="hbtns">
+      <a href="mailto:klassickmedia.support@gmail.com" class="bp">Book a Meet ✦</a>
+      <a href="#work" class="bs">See Our Work</a>
+    </div>
+  </div>
+  <div class="sind"><div class="sline"></div><span>Scroll to explore</span></div>
+</section>
+
+<div class="mqw">
+  <div class="mqt" id="mqt">
+    <span class="mqi">Full Content Package<span class="mqd">✦</span></span>
+    <span class="mqi">Pre-Production Strategy<span class="mqd">✦</span></span>
+    <span class="mqi">Cinematic Production<span class="mqd">✦</span></span>
+    <span class="mqi">VFX & 3D Post<span class="mqd">✦</span></span>
+    <span class="mqi">Color & Sound Design<span class="mqd">✦</span></span>
+    <span class="mqi">Digital Marketing<span class="mqd">✦</span></span>
+    <span class="mqi">Retention Analytics<span class="mqd">✦</span></span>
+    <span class="mqi">Music Video Direction<span class="mqd">✦</span></span>
+  </div>
+</div>
+
+<section id="stats">
+  <div class="mx">
+    <div class="sg">
+      <div class="si rv"><div class="sn" data-t="50">0</div><div class="sl">Expert Creators</div></div>
+      <div class="si rv d1"><div class="sn" data-t="300">0</div><div class="sl">Projects Delivered</div></div>
+      <div class="si rv d2"><div class="sn" data-t="40">0</div><div class="sl">Brand Clients</div></div>
+      <div class="si rv d3"><div class="sn" data-t="98">0</div><div class="sl">Satisfaction Rate</div></div>
+      <div class="si rv d4"><div class="sn" data-t="12">0</div><div class="sl">Global Countries</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="mx">
+    <p class="ey rv">Complete Solutions</p>
+    <h2 class="st rv">FULL CONTENT PACKAGE</h2>
+    <p class="sd rv">From your first idea to your final viewer. We don't just make videos — we strategize, produce, optimize, and market your content for measurable results.</p>
+    <div class="svgg">
+      <div class="sc rv"><span class="scn">01</span><span class="sci">🎯</span><h3 class="sct">Pre-Production Strategy</h3><p class="scd">Concept development, scriptwriting, storyboarding, casting, location scouting — every detail locked before cameras roll.</p><div class="scs"><div class="scst"><div class="scsd"></div>Concept Development</div><div class="scst"><div class="scsd"></div>Script & Storyboard</div><div class="scst"><div class="scsd"></div>Production Planning</div><div class="scst"><div class="scsd"></div>Budget Optimization</div></div></div>
+      <div class="sc rv d1"><span class="scn">02</span><span class="sci">🎬</span><h3 class="sct">Cinematic Production</h3><p class="scd">Full crew cinematography. 4K/6K/8K shoots. Drone work, gimbal, lighting design. Every frame composed for impact.</p><div class="scs"><div class="scst"><div class="scsd"></div>Professional Shoot Planning</div><div class="scst"><div class="scsd"></div>On-Location Production</div><div class="scst"><div class="scsd"></div>Lighting & Grading</div><div class="scst"><div class="scsd"></div>Gimbal & Drone Footage</div></div></div>
+      <div class="sc rv d2"><span class="scn">03</span><span class="sci">⚡</span><h3 class="sct">VFX & Post Production</h3><p class="scd">50+ specialists. VFX, 3D animation, motion graphics, color grading, sound design, music composition.</p><div class="scs"><div class="scst"><div class="scsd"></div>VFX & Visual Effects</div><div class="scst"><div class="scsd"></div>3D Animation & Graphics</div><div class="scst"><div class="scsd"></div>Professional Color Grade</div><div class="scst"><div class="scsd"></div>Sound Design & Mixing</div></div></div>
+      <div class="sc rv"><span class="scn">04</span><span class="sci">📸</span><h3 class="sct">Thumbnail Design</h3><p class="scd">Psychology-driven CTR optimization. A/B testing variants. Platform-specific designs that stop scrolls and drive clicks.</p><div class="scs"><div class="scst"><div class="scsd"></div>CTR Psychology Design</div><div class="scst"><div class="scsd"></div>A/B Testing Variants</div><div class="scst"><div class="scsd"></div>Platform Optimization</div><div class="scst"><div class="scsd"></div>Brand Consistency</div></div></div>
+      <div class="sc rv d1"><span class="scn">05</span><span class="sci">📊</span><h3 class="sct">Digital Marketing & Distribution</h3><p class="scd">Multi-platform delivery strategy. YouTube SEO, social media scheduling, paid ads optimization, audience targeting.</p><div class="scs"><div class="scst"><div class="scsd"></div>YouTube SEO Strategy</div><div class="scst"><div class="scsd"></div>Social Media Scheduling</div><div class="scst"><div class="scsd"></div>Paid Ads Management</div><div class="scst"><div class="scsd"></div>Audience Targeting</div></div></div>
+      <div class="sc rv d2"><span class="scn">06</span><span class="sci">📈</span><h3 class="sct">Analytics & Optimization</h3><p class="scd">Real-time retention tracking. Viewer drop-off analysis. Continuous optimization for maximum watch time and conversion.</p><div class="scs"><div class="scst"><div class="scsd"></div>Retention Analytics</div><div class="scst"><div class="scsd"></div>Drop-off Analysis</div><div class="scst"><div class="scsd"></div>Performance Optimization</div><div class="scst"><div class="scsd"></div>ROI Tracking</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="mv">
+  <div class="mvi">
+    <div>
+      <p class="ey rv">Cinematic Direction</p>
+      <h2 class="st rv">MUSIC VIDEO<br>MASTERY</h2>
+      <p class="rv" style="font-size:.98rem;color:rgba(245,245,247,.58);line-height:1.85;margin-top:1rem;">Every music video is a short film. We direct, script, narrate, and compose the emotional arc that makes audiences feel every lyric — pure cinema.</p>
+      <div class="mvd rv">
+        <div class="mvdn">VIKAS MISHRA</div>
+        <div class="mvdr">Director · Cinematographer · Narrator · Klassick Media</div>
+        <p class="mvdd">Complete creative direction — concept to final frame. Every shot serves the soul of the music. This is our core philosophy.</p>
+      </div>
+      <div style="margin-top:2rem;" class="rv"><a href="mailto:klassickmedia.support@gmail.com" class="bp">Book a Meet ✦</a></div>
+    </div>
+    <div class="rv">
+      <div class="mvf">
+        <iframe src="https://www.youtube.com/embed/OFlLGMsSVPA?autoplay=1&mute=1&loop=1&playlist=OFlLGMsSVPA&controls=0&modestbranding=1" allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none; object-fit:cover;"></iframe>
+        <div class="mvg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="mx">
+    <p class="ey rv">Systematic Excellence</p>
+    <h2 class="st rv">OUR PROCESS</h2>
+    <p class="sd rv">Structured workflow. Transparent communication. Cinematic excellence at every step.</p>
+    <div class="prw">
+      <div class="prl"></div>
+      <div class="prg">
+        <div class="prs rv"><div class="prn">01</div><div class="prt">Brief & Discovery</div><p class="prd">Deep dive into your brand, goals, and audience psychology.</p></div>
+        <div class="prs rv d1"><div class="prn">02</div><div class="prt">Concept & Script</div><p class="prd">Creative direction locked with strategic messaging.</p></div>
+        <div class="prs rv d2"><div class="prn">03</div><div class="prt">Pre-Production</div><p class="prd">Storyboard, casting, locations, crew scheduling.</p></div>
+        <div class="prs rv d3"><div class="prn">04</div><div class="prt">Production</div><p class="prd">Cinematic shoot with full crew and equipment.</p></div>
+        <div class="prs rv d4"><div class="prn">05</div><div class="prt">Post Production</div><p class="prd">Edit, VFX, color, sound, music composition.</p></div>
+        <div class="prs rv d5"><div class="prn">06</div><div class="prt">Distribution</div><p class="prd">Platform optimization, analytics, ongoing promotion.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="mx">
+    <p class="ey rv">Top Portfolio Showcase</p>
+    <h2 class="st rv">WORLD-CLASS ELITE CREATORS</h2>
+    <p class="sd rv">We’ve curated the best cinematic edits, shorts, and brand films from our global roster of 50+ elite creators. Click to watch the magic.</p>
+    <div class="pff rv">
+      <button class="pfb ac" data-f="all">All Masterpieces</button>
+      <button class="pfb" data-f="shorts">Shorts/Reels</button>
+      <button class="pfb" data-f="real-estate">Real Estate</button>
+      <button class="pfb" data-f="brand">Brand & SaaS</button>
+      <button class="pfb" data-f="vfx">3D & VFX</button>
+    </div>
+    <div class="pfg" id="pfg">
+      <!-- Dynamically loaded from local data array -->
+    </div>
+    <div style="text-align:center;margin-top:3.5rem;" class="rv">
+      <a href="mailto:klassickmedia.support@gmail.com" class="bp">Book a Meet to See More ✦</a>
+    </div>
+  </div>
+</section>
+
+<section id="cinematography">
+  <div class="mx">
+    <p class="ey rv">Visual Excellence</p>
+    <h2 class="st rv">CINEMATOGRAPHY</h2>
+    <p class="sd rv">Mastery in every frame. Technical precision + artistic vision. Explore our film production work and high-end cinematic captures.</p>
+    <div class="cg" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2.5rem; max-width:1000px; margin:3rem auto 0;">
+      <div class="cc rv" style="height:360px; width:100%;" onclick="VM.open('cinematography/Cinematic Landscape.mp4', 'local')">
+        <video src="cinematography/Cinematic Landscape.mp4" preload="auto" style="width:100%; height:100%; object-fit:cover; opacity:0.8;"></video>
+        <div class="cov" style="opacity:1; background:linear-gradient(to top, rgba(5,5,8,0.9) 20%, rgba(5,5,8,0.2) 60%, transparent);">
+          <div class="ct" style="font-size:1.5rem; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em;">CINEMATIC LANDSCAPE</div>
+          <div class="cs" style="font-size:0.8rem;">8K NATURE & LANDSCAPE CINEMATOGRAPHY</div>
+        </div>
+        <div class="pplay" style="opacity:1; transform:translate(-50%,-50%); width:60px; height:60px; font-size:1.5rem;">▶</div>
+      </div>
+      <div class="cc rv d1" style="height:360px; width:100%;" onclick="VM.open('cinematography/Cinematic horizontal.mp4', 'local')">
+        <video src="cinematography/Cinematic horizontal.mp4" preload="auto" style="width:100%; height:100%; object-fit:cover; opacity:0.8;"></video>
+        <div class="cov" style="opacity:1; background:linear-gradient(to top, rgba(5,5,8,0.9) 20%, rgba(5,5,8,0.2) 60%, transparent);">
+          <div class="ct" style="font-size:1.5rem; font-family:'Bebas Neue',sans-serif; letter-spacing:0.1em;">CINEMATIC SHOWCASE</div>
+          <div class="cs" style="font-size:0.8rem;">8K HORIZONTAL CINE SHOWCASE</div>
+        </div>
+        <div class="pplay" style="opacity:1; transform:translate(-50%,-50%); width:60px; height:60px; font-size:1.5rem;">▶</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai-services">
+  <div class="mx">
+    <p class="ey rv">Powered by Innovation</p>
+    <h2 class="st rv">AI-ENHANCED PRODUCTION</h2>
+    <p class="sd rv">Cutting-edge tools integrated at every layer. Smarter, faster, more creative output.</p>
+    <div class="aig">
+      <div class="aic rv"><div class="aii">🎞️</div><div class="ait">AI Upscaling</div><p class="aid">Transform footage to 4K/8K using advanced AI. Zero grain, maximum detail.</p><span class="aita">Brands & Films</span></div>
+      <div class="aic rv d1"><div class="aii">🎨</div><div class="ait">AI Color Science</div><p class="aid">Scene-by-scene grading powered by AI, refined by senior colorists.</p><span class="aita">Commercials</span></div>
+      <div class="aic rv d2"><div class="aii">✍️</div><div class="ait">AI Script Generation</div><p class="aid">Brand briefs to production-ready scripts in minutes.</p><span class="aita">Creators</span></div>
+      <div class="aic rv"><div class="aii">🌐</div><div class="ait">AI B-Roll</div><p class="aid">Generate stunning background elements that seamlessly integrate.</p><span class="aita">Ad Campaigns</span></div>
+      <div class="aic rv d1"><div class="aii">🔊</div><div class="ait">AI Audio</div><p class="aid">Noise removal, voice isolation, music scoring, broadcast clarity.</p><span class="aita">Podcasts</span></div>
+      <div class="aic rv d2"><div class="aii">📊</div><div class="ait">Retention Analytics</div><p class="aid">AI retention analysis to identify drop-offs and re-edit for maximum watch time.</p><span class="aita">YouTube</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="mx">
+    <p class="ey rv">The Backbone</p>
+    <h2 class="st rv">OUR SPECIALIZED DEPARTMENTS</h2>
+    <p class="sd rv">A seamless pipeline. Dedicated departments covering every aspect of high-end production.</p>
+    <div class="tg" id="tg-container">
+      <!-- Dynamically loaded from local data array -->
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="mx">
+    <p class="ey rv">Client Testimonials</p>
+    <h2 class="st rv">TRUSTED BY BRANDS</h2>
+    <div class="rg">
+      <div class="rc rv"><div class="rq">"</div><p class="rt">The music video exceeded every expectation. True director's eye — felt like a Bollywood production on indie budget. Booked for 3 more projects.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">AR</div><div><div class="ran">Aryan Raj</div><div class="rar">Musician · Mumbai</div><div class="rav2">✓ Verified</div></div></div></div>
+      <div class="rc rv d1"><div class="rq">"</div><p class="rt">YouTube CTR jumped from 3.2% to 8.7% after their thumbnail redesign. 24-hour turnaround, understood our brand instantly.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">PM</div><div><div class="ran">Priya Mehta</div><div class="rar">YouTuber · 150K Subs</div><div class="rav2">✓ Verified</div></div></div></div>
+      <div class="rc rv d2"><div class="rq">"</div><p class="rt">Dubai property launch video matched international luxury standards. Sales team uses it in every presentation. Highly recommend.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">KS</div><div><div class="ran">Khalid Sheikh</div><div class="rar">Real Estate Director · Dubai</div><div class="rav2">✓ Verified</div></div></div></div>
+      <div class="rc rv"><div class="rq">"</div><p class="rt">50+ editors, zero chaos. Project management was tight, on-time delivery, marketing director blown away. Remarkable team.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">NB</div><div><div class="ran">Neha Bhatia</div><div class="rar">Brand Manager · FMCG</div><div class="rav2">✓ Verified</div></div></div></div>
+      <div class="rc rv d1"><div class="rq">"</div><p class="rt">Short-form content got 2.3M organic views week one. These guys understand retention hooks like nobody else.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">VK</div><div><div class="ran">Vikram Kapoor</div><div class="rar">D2C Founder · Delhi</div><div class="rav2">✓ Verified</div></div></div></div>
+      <div class="rc rv d2"><div class="rq">"</div><p class="rt">Only team that actually listens and delivers genuinely cinematic work. London to Mumbai — Klassick is the gold standard.</p><div class="rs">★★★★★</div><div class="ra"><div class="rav">AL</div><div><div class="ran">Aisha Lamont</div><div class="rar">Restaurant Group · London</div><div class="rav2">✓ Verified</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="imp">
+  <div class="mx">
+    <div class="impin">
+      <div>
+        <p class="ey rv">Continuous Improvement</p>
+        <h2 class="st rv" style="font-size:clamp(2.4rem,4.5vw,3.5rem);">MAKE US IMPROVE<br>1% MORE BETTER<br>THAN YESTERDAY</h2>
+        <p class="sd rv">We obsess over being better every single day. Tell us exactly what changes to do in our services to make your experience legendary.</p>
+      </div>
+      <div class="impf rv">
+        <label class="ifl">Your Message</label>
+        <textarea id="ixt" placeholder="What changes should we make to our services? Be brutally honest..."></textarea>
+        <label class="ifl">Category</label>
+        <select id="ixc">
+          <option value="">— Select area —</option>
+          <option>Video Editing Services</option>
+          <option>Cinematic Production</option>
+          <option>VFX & Post Production</option>
+          <option>Thumbnail Designs</option>
+          <option>Communication & Speed</option>
+          <option>AI Chatbot Feedback</option>
+          <option>General Feedback</option>
+        </select>
+        <button class="isub" onclick="submitFB()">Send Feedback ✦</button>
+        <div class="iok" id="iok">✓ Thank you — we are now 1% better because of you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="mx" style="text-align:center;">
+    <p class="ey rv">Investment</p>
+    <h2 class="st rv">PRICING TIERS</h2>
+    <p class="sd rv" style="margin:0 auto 1rem;">Every project is unique. Contact us for custom pricing tailored to your scope, timeline, and goals.</p>
+    <div class="prg2">
+      <div class="prc rv">
+        <div class="prtier">STARTER</div>
+        <div class="prtt">CREATOR PACK</div>
+        <div class="prn2">Custom Quote</div>
+        <ul class="prfl">
+          <li>Short-Form Reels & Shorts</li>
+          <li>Motion Graphics & Captions</li>
+          <li>Thumbnail Design</li>
+          <li>48-Hour Turnaround</li>
+          <li>2 Revision Rounds</li>
+        </ul>
+        <a href="mailto:klassickmedia.support@gmail.com" class="prct">Book a Meet ✦</a>
+      </div>
+      <div class="prc ht rv d1">
+        <div class="prb">Most Popular</div>
+        <div class="prtier">GROWTH</div>
+        <div class="prtt">BRAND PACKAGE</div>
+        <div class="prn2">Custom Quote</div>
+        <ul class="prfl">
+          <li>Full Content Production</li>
+          <li>Script to Final Delivery</li>
+          <li>VFX & Motion Graphics</li>
+          <li>Color Grade & Sound</li>
+          <li>Multi-Platform Versioning</li>
+          <li>Dedicated Project Manager</li>
+        </ul>
+        <a href="mailto:klassickmedia.support@gmail.com" class="prct">Book a Meet ✦</a>
+      </div>
+      <div class="prc rv d2">
+        <div class="prtier">PREMIUM</div>
+        <div class="prtt">CINEMA PACK</div>
+        <div class="prn2">Custom Quote</div>
+        <ul class="prfl">
+          <li>Music Video / Commercial Film</li>
+          <li>Director · DP · Full Crew</li>
+          <li>4K/6K Cinematic Production</li>
+          <li>Drone & Gimbal Included</li>
+          <li>Full Post Production</li>
+          <li>Distribution Ready</li>
+        </ul>
+        <a href="mailto:klassickmedia.support@gmail.com" class="prct">Book a Meet ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="mx">
+    <div class="cong">
+      <div>
+        <p class="ey rv">Let's Create</p>
+        <h2 class="st rv">READY TO MAKE<br>LEGENDARY<br>CONTENT?</h2>
+        <p class="sd rv">Email us or reach out on Telegram/Instagram. Our team responds within the hour — 7 days a week. Fast, human, direct.</p>
+        <a href="mailto:klassickmedia.support@gmail.com" class="wab rv" id="book-a-meet">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Book a Meet
+        </a>
+        <div class="cii">
+          <a href="https://t.me/YourstrulyVikasMishra" target="_blank" class="cir" style="text-decoration:none; color:inherit;">
+            <span style="font-size:1.3rem;">✈️</span>
+            <div>
+              <div class="cil">Fastest Response</div>
+              <div class="civ" style="color:#0088cc;">Telegram: @YourstrulyVikasMishra</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/klassickmedia/?utm_source=ig_web_button_share_sheet" target="_blank" class="cir" style="text-decoration:none; color:inherit;">
+            <span style="font-size:1.3rem;">📸</span>
+            <div>
+              <div class="cil">Instagram Portfolio</div>
+              <div class="civ" style="color:#e1306c;">@klassickmedia</div>
+            </div>
+          </a>
+          <div class="cir">
+            <span style="font-size:1.3rem;">📍</span>
+            <div>
+              <div class="cil">HQ Location</div>
+              <div class="civ">Mumbai, India · Worldwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="conv rv">
+        <div class="cbig">KLASSICK<br>MEDIA</div>
+        <p style="font-size:.78rem;color:rgba(245,245,247,.35);letter-spacing:.15em;text-transform:uppercase;margin-top:.8rem;font-weight:600;">Elite Video Production · Worldwide Reach</p>
+        <div class="ctags">
+          <span class="ctg">50+ Creators</span><span class="ctg">300+ Projects</span><span class="ctg">12+ Countries</span><span class="ctag">24hr Response</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">KLASSICK<span style="color:#ff006e;">.</span>MEDIA</div>
+  <div style="display:flex; gap:1.5rem; justify-content:center; align-items:center;">
+    <a href="https://www.instagram.com/klassickmedia/?utm_source=ig_web_button_share_sheet" target="_blank" class="fwa">Instagram ↗</a>
+    <a href="https://t.me/YourstrulyVikasMishra" target="_blank" class="fwa">Telegram ↗</a>
+  </div>
+  <div class="fc">© 2024 Klassick Media. Mumbai. All rights reserved.</div>
+  <a href="mailto:klassickmedia.support@gmail.com" class="fwa">Book a Meet ↗</a>
+</footer>
+
+<div id="cb">
+  <div class="cwin" id="cwin">
+    <div class="ch2">
+      <div class="cha">🎬</div>
+      <div><div class="chn">Klassick AI</div><div class="chs">● Online · Powered by Gemma</div></div>
+      <button class="ccl" onclick="TC()" aria-label="Close">✕</button>
+    </div>
+    <div class="cm" id="cm">
+      <div class="mb">Hey! 👋 I'm your Klassick Media AI assistant. Ask me about our specialized departments, production packages, music videos, or how to start your project.</div>
+    </div>
+    <div class="cty" id="cty"><span></span><span></span><span></span></div>
+    <div class="csug" id="csug">
+      <button class="csg" onclick="QA('What services do you offer?')">Services</button>
+      <button class="csg" onclick="QA('How do I start a project?')">Start Project</button>
+      <button class="csg" onclick="QA('What is your pricing?')">Pricing</button>
+      <button class="csg" onclick="QA('Tell me about your team')">Team</button>
+    </div>
+    <div class="cir2">
+      <input class="ci" id="ci" placeholder="Ask about Klassick Media..." onkeydown="if(event.key==='Enter'){SC();}">
+      <button class="csb" onclick="SC()">→</button>
+    </div>
+  </div>
+  <button class="ctb" onclick="TC()">🎬<div class="cpng"></div></button>
+</div>
+
+<script>
+/* INLINE DATA STORE */
+const KLASSICK_DATA = {
+  portfolioVideos: [
+    // 3D Animation & Visual Effects
+    {
+      id: 1,
+      category: 'vfx',
+      delayClass: '',
+      videoUrl: 'Tenali Raman - Expert Animators (1080p, h264).mp4',
+      videoType: 'local',
+      title: 'Tenali Raman Animation',
+      clientInfo: '3D VIDEOS ANIMATION',
+      editor: 'Harshit Shah'
+    },
+    {
+      id: 2,
+      category: 'vfx',
+      delayClass: 'd1',
+      videoUrl: 'WhatsApp Video 2026-06-28 at 1.57.54 AM.mp4',
+      videoType: 'local',
+      title: '3D Character Showcase',
+      clientInfo: '3D VIDEOS ANIMATION',
+      editor: 'Ali Raza'
+    },
+    // Real Estate & Property Showcase
+    {
+      id: 3,
+      category: 'real-estate',
+      delayClass: 'd2',
+      videoUrl: '022daf3ebe07bdf35ddb98d79c2fffdd.mp4',
+      videoType: 'local',
+      title: 'Luxury Villa Cinematic',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Roshan'
+    },
+    {
+      id: 4,
+      category: 'real-estate',
+      delayClass: '',
+      videoUrl: '2829c6fc5ae9a6cd94b13fb83c66d868.mp4',
+      videoType: 'local',
+      title: 'Modern Property Showcase',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Sangram Jadhav'
+    },
+    {
+      id: 5,
+      category: 'real-estate',
+      delayClass: 'd1',
+      videoUrl: 'Video-650.mp4',
+      videoType: 'local',
+      title: 'Urban Estate Drone Tour',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Junaid Javid'
+    },
+    // SaaS & B2B Product Videos
+    {
+      id: 6,
+      category: 'brand',
+      delayClass: 'd2',
+      videoUrl: 'Latest (SAAS).mp4',
+      videoType: 'local',
+      title: 'Enterprise SaaS Platform',
+      clientInfo: 'SAAS VIDEOS',
+      editor: 'Krishna'
+    },
+    {
+      id: 7,
+      category: 'brand',
+      delayClass: '',
+      videoUrl: 'adobe saas.mp4',
+      videoType: 'local',
+      title: 'Adobe Integration Promo',
+      clientInfo: 'SAAS VIDEOS',
+      editor: 'Subhendu Jana'
+    },
+    {
+      id: 8,
+      category: 'brand',
+      delayClass: 'd1',
+      videoUrl: 'eafjvjgp2bskrqnw08o1.mp4',
+      videoType: 'local',
+      title: 'B2B SaaS Explainer',
+      clientInfo: 'SAAS VIDEOS',
+      editor: 'Yusuf Nigerian'
+    },
+    // Talking Head & Interview Content
+    {
+      id: 9,
+      category: 'shorts',
+      delayClass: 'd2',
+      videoUrl: 'ugc 1 .mp4',
+      videoType: 'local',
+      title: 'UGC Before/After Edit',
+      clientInfo: 'TALKING HEAD',
+      editor: 'Fares Jamoussi'
+    },
+    {
+      id: 10,
+      category: 'shorts',
+      delayClass: '',
+      videoUrl: 'Edit_9.mp4',
+      videoType: 'local',
+      title: 'Professional Talking Head',
+      clientInfo: 'TALKING HEAD',
+      editor: 'Junaid Javid'
+    },
+    // Motion Graphics & Animation
+    {
+      id: 11,
+      category: 'vfx',
+      delayClass: 'd1',
+      videoUrl: '6b4710614ba7ed4cf05921d16d969caf.mp4',
+      videoType: 'local',
+      title: 'Vibrant Motion Design',
+      clientInfo: 'MOTION GRAPHICS VIDEO',
+      editor: 'Ruturaj Kulkarni'
+    },
+    {
+      id: 12,
+      category: 'vfx',
+      delayClass: 'd2',
+      videoUrl: '9034075b93e43107d2f21b14e9ea9a0a.mp4',
+      videoType: 'local',
+      title: 'Dynamic Typography Promo',
+      clientInfo: 'MOTION GRAPHICS VIDEO',
+      editor: 'Ruturaj Kulkarni'
+    },
+    // AI-Enhanced Content
+    {
+      id: 13,
+      category: 'shorts',
+      delayClass: '',
+      videoUrl: 'Ai-Reel-Collagen-2.mp4',
+      videoType: 'local',
+      title: 'AI Collagen Reel',
+      clientInfo: 'AI BASED VIDEOS FOR CLIENT',
+      editor: 'IQRA'
+    },
+    {
+      id: 14,
+      category: 'shorts',
+      delayClass: 'd1',
+      videoUrl: 'Tyrion Lannisterr-9x16.mp4',
+      videoType: 'local',
+      title: 'Tyrion Lannister AI Concept',
+      clientInfo: 'AI BASED VIDEOS FOR CLIENT',
+      editor: 'IQRA'
+    },
+    {
+      id: 15,
+      category: 'real-estate',
+      delayClass: '',
+      videoUrl: 'real estate/Reel (1).mp4',
+      videoType: 'local',
+      title: 'Luxury Estate Tour',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Roshan'
+    },
+    {
+      id: 16,
+      category: 'real-estate',
+      delayClass: 'd1',
+      videoUrl: 'real estate/Reel (2).mp4',
+      videoType: 'local',
+      title: 'Modern Villa Walkthrough',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Sangram Jadhav'
+    },
+    {
+      id: 17,
+      category: 'real-estate',
+      delayClass: 'd2',
+      videoUrl: 'real estate/WhatsApp Video 2026-03-20 at 3.29.15 PM.mp4',
+      videoType: 'local',
+      title: 'Premium Property Tour',
+      clientInfo: 'REAL ESTATE VIDEOS',
+      editor: 'Junaid Javid'
+    }
+  ],
+  teamMembers: [
+    { initials: 'SW', name: 'Script & Strategy', exp: '10+ Yrs Exp', skills: 'Concept, Briefs & Hooks', delay: '' },
+    { initials: 'CD', name: 'Cinematography', exp: '8+ Yrs Exp', skills: '8K Shoots, Drones, Sets', delay: 'd1' },
+    { initials: 'VX', name: 'VFX & CGI Animation', exp: '12+ Yrs Exp', skills: 'Blender & Unreal Engine', delay: 'd2' },
+    { initials: 'MG', name: '2D & Motion Graphics', exp: '7+ Yrs Exp', skills: 'Captions, Typography', delay: 'd3' },
+    { initials: 'SD', name: 'Sound Design & Scoring', exp: '9+ Yrs Exp', skills: 'Foley, SFX, Audio Mix', delay: '' },
+    { initials: 'CS', name: 'Color Science', exp: '11+ Yrs Exp', skills: 'DaVinci Resolve Experts', delay: 'd1' },
+    { initials: 'CT', name: 'Thumbnail Psychology', exp: '6+ Yrs Exp', skills: 'Photoshop, High-CTR A/B', delay: 'd2' },
+    { initials: 'DM', name: 'SEO & Distribution', exp: '8+ Yrs Exp', skills: 'YT SEO, Ads, Algorithms', delay: 'd3' },
+    { initials: 'RO', name: 'Retention Analytics', exp: '5+ Yrs Exp', skills: 'Drop-off Optimization', delay: '' },
+    { initials: 'PP', name: 'Pre-Production Setup', exp: '9+ Yrs Exp', skills: 'Casting & Location Hunt', delay: 'd1' },
+    { initials: 'QA', name: 'Quality Assurance', exp: '7+ Yrs Exp', skills: 'Pacing & QC Audits', delay: 'd2' },
+    { initials: 'CR', name: 'Client Relations', exp: '10+ Yrs Exp', skills: 'Project Managers, Setup', delay: 'd3' }
+  ]
+};
+
+/* VIDEO RESOLVER */
+let VIDEO_MAPPINGS = {};
+const INLINE_VIDEO_MAPPINGS = {
+  "videos/AI BASED VIDEOS FOR CLIENT/IQRA/Tyrion Lannisterr-9x16.mp4":  "https://files.catbox.moe/g1yina.mp4",
+  "videos/3D VIDEOS ANIMATION/Harshit Shah/Tenali Raman - Expert Animators (1080p, h264).mp4":  "https://files.catbox.moe/lmrkur.mp4",
+  "videos/AI BASED VIDEOS FOR CLIENT/IQRA/Ai-Reel-Collagen-2.mp4":  "https://files.catbox.moe/astogk.mp4",
+  "real estate/Reel (2).mp4":  "https://files.catbox.moe/x7pv98.mp4",
+  "videos/REAL ESTATE VIDEOS/Sangram Jadhav/2829c6fc5ae9a6cd94b13fb83c66d868.mp4":  "https://files.catbox.moe/gk3dbf.mp4",
+  "videos/SAAS VIDEOS/Subhendu jana/adobe saas.mp4":  "https://files.catbox.moe/xb5qej.mp4",
+  "real estate/WhatsApp Video 2026-03-20 at 3.29.15 PM.mp4":  "https://files.catbox.moe/l1721t.mp4",
+  "real estate/Reel (1).mp4":  "https://files.catbox.moe/p5nrj0.mp4",
+  "videos/SAAS VIDEOS/YUSUF NIGERIAN/eafjvjgp2bskrqnw08o1.mp4":  "https://files.catbox.moe/v3nd13.mp4",
+  "videos/SAAS VIDEOS/Krishna/Latest (SAAS).mp4":  "https://files.catbox.moe/56attg.mp4",
+  "cinematography/Cinematic Landscape.mp4":  "https://files.catbox.moe/t38vvc.mp4",
+  "videos/TALKING HEAD/Fares Jamoussi BEFORE AFTER FOR EDITORS SPECIFIC/ugc 1 .mp4":  "https://files.catbox.moe/74lk9t.mp4",
+  "videos/REAL ESTATE VIDEOS/Junaid Javid/Video-650.mp4":  "https://files.catbox.moe/gee3eq.mp4",
+  "videos/3D VIDEOS ANIMATION/Ali Raza/WhatsApp Video 2026-06-28 at 1.57.54 AM.mp4":  "https://files.catbox.moe/yx6e8k.mp4",
+  "videos/REAL ESTATE VIDEOS/ROSHAN/022daf3ebe07bdf35ddb98d79c2fffdd.mp4":  "https://files.catbox.moe/h7wu81.mp4",
+  "videos/MOTION GRAPHICS VIDEO/Ruturaj kulkarni/6b4710614ba7ed4cf05921d16d969caf.mp4":  "https://files.catbox.moe/t3b1gn.mp4",
+  "videos/TALKING HEAD/Junaid Javid/Edit_9.mp4":  "https://files.catbox.moe/83g5vz.mp4",
+  "videos/MOTION GRAPHICS VIDEO/Ruturaj kulkarni/9034075b93e43107d2f21b14e9ea9a0a.mp4":  "https://files.catbox.moe/uqqgee.mp4",
+  "cinematography/Cinematic horizontal.mp4":  "https://files.catbox.moe/6zid0x.mp4"
+};
+
+function resolveVideo(url) {
+  if (!url) return '';
+  const filename = url.split('/').pop().toLowerCase().trim();
+  const mapSource = Object.keys(VIDEO_MAPPINGS).length > 0 ? VIDEO_MAPPINGS : INLINE_VIDEO_MAPPINGS;
+  
+  for (const key in mapSource) {
+    const keyFilename = key.split('/').pop().toLowerCase().trim();
+    if (keyFilename === filename) {
+      return mapSource[key];
+    }
+  }
+  return url;
+}
+
+function resolveStaticVideos() {
+  document.querySelectorAll('video').forEach(video => {
+    if (video.classList.contains('hero-bg-video')) return;
+    const originalSrc = video.getAttribute('src');
+    if (originalSrc) {
+      const resolved = resolveVideo(originalSrc);
+      video.src = resolved;
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('preload', 'auto');
+    }
+  });
+  
+  document.querySelectorAll('.cc').forEach(div => {
+    const clickAttr = div.getAttribute('onclick');
+    if (clickAttr && clickAttr.includes('VM.open')) {
+      const match = clickAttr.match(/VM\.open\('([^']+)',\s*'([^']+)'\)/);
+      if (match) {
+        const originalUrl = match[1];
+        const type = match[2];
+        const resolved = resolveVideo(originalUrl);
+        div.setAttribute('onclick', `VM.open('${resolved}', '${type}')`);
+      }
+    }
+  });
+}
+
+function renderPortfolio() {
+  const pfg = document.getElementById('pfg');
+  if (pfg) pfg.innerHTML = KLASSICK_DATA.portfolioVideos.map(v => {
+    const resolvedUrl = resolveVideo(v.videoUrl);
+    return `
+      <div class="pi ${v.id===1||v.id===9?'ft':''} rv ${v.delayClass}" data-c="${v.category}" onclick="VM.open('${resolvedUrl}', '${v.videoType}')">
+        <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden;">
+          <video src="${resolvedUrl}" preload="auto" muted playsinline onloadedmetadata="this.currentTime = 2;" style="width:100%; height:100%; object-fit:cover; opacity:0.85;"></video>
+        </div>
+        <div class="pov">
+          <div class="ptag">${v.clientInfo}</div>
+          <div class="ptit">${v.title}</div>
+          <div class="pcli">Handled by ${v.editor}</div>
+        </div>
+        <div class="pplay">▶</div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* HOVER VIDEO PRELOADING & PLAYBACK */
+const preloadedUrls = new Set();
+function preloadVideo(url) {
+  if (!url || preloadedUrls.has(url) || url.includes('youtube.com') || url.includes('youtu.be')) return;
+  preloadedUrls.add(url);
+  
+  const tempVideo = document.createElement('video');
+  tempVideo.src = url;
+  tempVideo.preload = 'auto';
+  tempVideo.load();
+}
+
+document.addEventListener('mouseover', (e) => {
+  const card = e.target.closest('.pi, .cc');
+  if (!card) return;
+  
+  let url = '';
+  const clickAttr = card.getAttribute('onclick');
+  if (clickAttr && clickAttr.includes('VM.open')) {
+    const match = clickAttr.match(/VM\.open\('([^']+)'/);
+    if (match) {
+      url = match[1];
+    }
+  } else {
+    const videoEl = card.querySelector('video');
+    if (videoEl) {
+      url = videoEl.getAttribute('src');
+    }
+  }
+  
+  if (url) {
+    const cleanUrl = url.split('#')[0];
+    const resolved = resolveVideo(cleanUrl);
+    preloadVideo(resolved);
+  }
+
+  // Hover play trigger
+  const video = card.querySelector('video');
+  if (video && video.paused) {
+    video.play().catch(err => {});
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  const card = e.target.closest('.pi, .cc');
+  if (!card) return;
+  const related = e.relatedTarget;
+  if (related && card.contains(related)) return;
+  const video = card.querySelector('video');
+  if (video) {
+    video.pause();
+    video.currentTime = 2; // reset to thumbnail frame
+  }
+});
+
+/* HERO BACKGROUND SLIDESHOW */
+function initHeroSlideshow() {
+  const v1 = document.getElementById('hero-bg-video-1');
+  const v2 = document.getElementById('hero-bg-video-2');
+  if (!v1 || !v2) return;
+  
+  // Cycle through all available local videos
+  const videos = KLASSICK_DATA.portfolioVideos.map(v => resolveVideo(v.videoUrl));
+  if (videos.length === 0) return;
+  
+  let currentIdx = 0;
+  let activeVideo = v1;
+  let inactiveVideo = v2;
+  
+  // Set up first video
+  v1.src = videos[0];
+  v1.playbackRate = 1.5;
+  v1.muted = true;
+  v1.playsInline = true;
+  v1.style.opacity = 0.22;
+  v1.play().catch(e => console.warn(e));
+  
+  // Preload second video
+  v2.src = videos[1 % videos.length];
+  v2.preload = 'auto';
+  v2.load();
+  
+  async function transition() {
+    const prevVideo = activeVideo;
+    activeVideo = inactiveVideo;
+    inactiveVideo = prevVideo;
+    
+    activeVideo.currentTime = 1.0; // avoid black frames
+    activeVideo.playbackRate = 1.5; // play fastly
+    
+    try {
+      await activeVideo.play();
+      activeVideo.style.opacity = 0.22;
+      inactiveVideo.style.opacity = 0;
+      
+      setTimeout(() => {
+        if (inactiveVideo !== activeVideo) {
+          inactiveVideo.pause();
+        }
+      }, 600);
+      
+      currentIdx = (currentIdx + 1) % videos.length;
+      const nextUrl = videos[(currentIdx + 1) % videos.length];
+      inactiveVideo.src = nextUrl;
+      inactiveVideo.preload = 'auto';
+      inactiveVideo.load();
+    } catch (err) {
+      console.warn('Hero transition play failed:', err);
+    }
+  }
+  
+  // Rotate every 1.5s (2.25s of video time at 1.5x) so all 14 cycle within 21s
+  setInterval(transition, 1500);
+}
+
+
+async function initVideoMappings() {
+  try {
+    const response = await fetch('/api/videos');
+    if (response.ok) {
+      VIDEO_MAPPINGS = await response.json();
+      console.log('Video mappings loaded successfully from API.');
+    }
+  } catch (error) {
+    console.warn('Failed to fetch video mappings from API, using inline fallback:', error);
+  }
+  resolveStaticVideos();
+  renderPortfolio();
+  
+  // Set up Lazy Loading Intersection Observer
+  const videoObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        video.preload = "auto";
+        observer.unobserve(video);
+      }
+    });
+  }, { rootMargin: "150px" });
+
+  document.querySelectorAll('video').forEach(video => {
+    if (video.id === 'hero-bg-video') return;
+    videoObserver.observe(video);
+  });
+  
+  initHeroSlideshow();
+}
+
+window.addEventListener('DOMContentLoaded', initVideoMappings);
+
+/* CUSTOM CURSOR */
+const C=document.getElementById('cur'),CR=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(() => {const a=()=>{rx+=(mx-rx)*.15;ry+=(my-ry)*.15;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(a);};a();})();
+document.querySelectorAll('a,button,.sc,.pi,.cc,.ec,.rc,.prc,.aic').forEach(e=>{e.addEventListener('mouseenter',()=>document.body.classList.add('ch'));e.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));});
+
+/* DATA RENDER */
+// Portfolio grid is now rendered dynamically inside renderPortfolio() which is called by initVideoMappings()
+
+const tg = document.getElementById('tg-container');
+if (tg) tg.innerHTML = KLASSICK_DATA.teamMembers.map(t => `
+  <div class="ec rv ${t.delay}">
+    <div class="ea">${t.initials}</div>
+    <div class="en">${t.name}</div>
+    <div class="ee">${t.exp}</div>
+    <div class="et">${t.skills}</div>
+  </div>
+`).join('');
+
+/* HERO CANVAS */
+const cv=document.getElementById('hc'),cx=cv.getContext('2d');
+let W=0,H=0,particles=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;if(particles.length===0)initParticles();}
+resize();
+window.addEventListener('resize',resize);
+function initParticles(){particles=[];const n=Math.floor(W*H/7000);for(let i=0;i<n;i++)particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.8+.5,a:Math.random()*.6+.15});}
+initParticles();
+let hx=W/2,hy=H/2;
+document.addEventListener('mousemove',e=>{hx=e.clientX;hy=e.clientY;});
+const animate=()=>{cx.clearRect(0,0,W,H);const g=cx.createRadialGradient(hx,hy,0,hx,hy,500);g.addColorStop(0,'rgba(255,0,110,.08)');g.addColorStop(1,'rgba(5,5,8,0)');cx.fillStyle=g;cx.fillRect(0,0,W,H);
+for(let i=0;i<particles.length;i++){const p=particles[i];const dx=hx-p.x,dy=hy-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*.008;p.vy+=dy/d*.008;}}
+particles.forEach(p=>{const sp=Math.sqrt(p.vx*p.vx+p.vy*p.vy);if(sp>.6)p.vx*=.92;p.vy*=.92;p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`hsla(${240+Math.random()*20},80%,65%,${p.a})`;cx.fill();});
+requestAnimationFrame(animate);};
+animate();
+
+/* NAV */
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sh',scrollY>60));
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('mo')));
+
+/* REVEAL */
+const rvO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vs');rvO.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>rvO.observe(el));
+
+/* COUNTERS */
+const cO=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.t;let c=0;const ti=setInterval(()=>{c=Math.min(c+t/60,t);el.textContent=Math.floor(c)+(t>=98?'%':'+');if(c>=t)clearInterval(ti);},16);cO.unobserve(el);});},{threshold:.5});
+document.querySelectorAll('[data-t]').forEach(el=>cO.observe(el));
+
+/* FILTER */
+document.querySelectorAll('.pfb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.pfb').forEach(x=>x.classList.remove('ac'));b.classList.add('ac');const f=b.dataset.f;document.querySelectorAll('.pi').forEach(i=>i.style.display=f==='all'||i.dataset.c===f?'':'none');}));
+
+/* VIDEO MODAL */
+const VM={open(url,type){const inn=document.getElementById('vminn');if(type==='youtube'){inn.innerHTML=`<button class="vmc" onclick="VM.close()">✕</button><iframe id="vmi" src="https://www.youtube.com/embed/${url}?autoplay=1&rel=0&playsinline=1" allow="autoplay; fullscreen; encrypted-media" style="width:100%;height:100%;border:none;background:#000;"></iframe>`;}else{inn.innerHTML=`<button class="vmc" onclick="VM.close()">✕</button><video id="vmi" src="${url}" controls autoplay playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;outline:none;background:#000;"></video>`;const v=document.getElementById('vmi');try{v.load();const p=v.play();if(p&&p.catch)p.catch(()=>{});}catch(e){}}document.getElementById('vmod').classList.add('op');document.body.style.overflow='hidden';},close(){document.getElementById('vmod').classList.remove('op');const el=document.getElementById('vmi');if(el&&el.tagName==='VIDEO'){try{el.pause();el.removeAttribute('src');el.load();}catch(e){}}document.getElementById('vminn').innerHTML=`<button class="vmc" onclick="VM.close()">✕</button>`;document.body.style.overflow='';}};
+/* AGGRESSIVE IDLE PREFETCH — warm browser cache for every clickable video */
+(function(){
+  function collect(){
+    const urls=new Set();
+    document.querySelectorAll('[onclick*="VM.open"]').forEach(el=>{
+      const m=(el.getAttribute('onclick')||'').match(/VM\.open\('([^']+)',\s*'([^']+)'/);
+      if(m && m[2]!=='youtube') urls.add(m[1]);
+    });
+    document.querySelectorAll('video').forEach(v=>{const s=v.getAttribute('src');if(s && !v.classList.contains('hero-bg-video'))urls.add(s);});
+    return [...urls];
+  }
+  function warm(url){
+    if(!url || (typeof preloadedUrls!=='undefined' && preloadedUrls.has(url))) return;
+    if(typeof preloadedUrls!=='undefined') preloadedUrls.add(url);
+    try{fetch(url,{method:'GET',headers:{Range:'bytes=0-524287'},mode:'cors',credentials:'omit'}).catch(()=>{});}catch(e){}
+    const v=document.createElement('video');v.preload='auto';v.muted=true;v.src=url;try{v.load();}catch(e){}
+  }
+  function run(){const urls=collect();let i=0;const step=()=>{const end=Math.min(i+3,urls.length);for(;i<end;i++)warm(urls[i]);if(i<urls.length)setTimeout(step,700);};step();}
+  window.addEventListener('load',()=>{if('requestIdleCallback' in window){requestIdleCallback(run,{timeout:2500});}else{setTimeout(run,1800);}});
+})();
+document.getElementById('vmod').addEventListener('click',function(e){if(e.target===this)VM.close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')VM.close();});
+
+/* FEEDBACK */
+function submitFB(){const t=document.getElementById('ixt').value.trim();if(!t)return;document.getElementById('ixt').value='';document.getElementById('ixc').selectedIndex=0;const ok=document.getElementById('iok');ok.style.display='block';setTimeout(()=>ok.style.display='none',5000);}
+
+/* CHATBOT */
+let co=false;
+function TC(){co=!co;document.getElementById('cwin').classList.toggle('op',co);if(co)document.getElementById('ci').focus();}
+function QA(q){document.getElementById('csug').style.display='none';document.getElementById('ci').value=q;SC();}
+const hist=[];
+
+function getLocalResponse(q) {
+  const query = q.toLowerCase();
+  
+  if (query.includes('pricing') || query.includes('price') || query.includes('cost') || query.includes('rate') || query.includes('charge')) {
+    return "We offer three flexible pricing tiers customized to your project scope:\n\n1. 🎬 **Creator Pack**: Short-Form Reels & Shorts, Motion Graphics, and Thumbnail Design.\n2. 🚀 **Brand Package**: Full content production from script to final delivery with a dedicated project manager.\n3. 🎥 **Cinema Pack**: Elite music videos and commercial films (4K/6K shoots, full crew).\n\nEmail us at **klassickmedia.support@gmail.com** for a personalized custom quote!";
+  }
+  
+  if (query.includes('service') || query.includes('offer') || query.includes('do you do') || query.includes('what do you')) {
+    return "Klassick Media is a full-service video agency. We handle your entire video journey:\n\n- **Pre-Production Strategy** (concept, script, storyboard)\n- **Cinematic Production** (4K/6K/8K shoots, drone, lighting)\n- **VFX & Post-Production** (editing, grading, sound mixing)\n- **Thumbnail Design** (CTR optimization)\n- **Digital Marketing** (SEO & ads management)\n- **Retention Analytics** (drop-off optimization)";
+  }
+  
+  if (query.includes('team') || query.includes('creator') || query.includes('editor') || query.includes('who are') || query.includes('member')) {
+    return "Our team consists of 50+ elite creators and editors worldwide, split into specialized departments:\n\n- **Pre-Production**: Concept & Strategy\n- **Creative & Cinematography**: Direction & 8K Shoots\n- **Post & VFX**: Industry-grade editing and Blender/3D\n- **Sound Design**: Music scoring & mixing\n- **Marketing & Thumbnails**: CTR psychology & SEO\n\nSome of our top editors include Subhendu Jana, Yusuf, Krishna, Ali Raza, Harshit Shah, Ruturaj Kulkarni, Junaid Javid, Roshan, Sangram Jadhav, and IQRA.";
+  }
+  
+  if (query.includes('start') || query.includes('book') || query.includes('hire') || query.includes('meet') || query.includes('contact') || query.includes('work with') || query.includes('email') || query.includes('telegram')) {
+    return "Starting a project with us is simple! 🚀\n\n1. Email us at **klassickmedia.support@gmail.com** with your project brief.\n2. Chat with us on Telegram **@YourstrulyVikasMishra** for a fast response.\n3. We will set up a discovery call within 24 hours to discuss strategy.\n\nYou can also click any of the **'Book a Meet'** buttons on this page!";
+  }
+  
+  if (query.includes('where') || query.includes('location') || query.includes('mumbai') || query.includes('india') || query.includes('office')) {
+    return "Klassick Media is headquartered in **Mumbai, India**, but we operate as a global agency serving clients and managing elite creators worldwide (including Dubai, London, and Delhi).";
+  }
+  
+  if (query.includes('work') || query.includes('portfolio') || query.includes('video') || query.includes('showcase') || query.includes('example')) {
+    return "We have curated a showcase of our top masterpieces right here in the **World-Class Elite Editors** section! You can filter them by Shorts/Reels, Brand & Real Estate, or 3D & VFX. Just click any video thumbnail to watch it!";
+  }
+  
+  return "Thanks for asking! Klassick Media is an elite video production agency that handles your entire content journey (concept to conversion) with a team of 50+ global creators. \n\nFor custom quotes and direct inquiries, please contact our team at **klassickmedia.support@gmail.com** or Telegram **@YourstrulyVikasMishra**! How else can I help you today?";
+}
+
+async function SC(){
+  const inp=document.getElementById('ci'),msg=inp.value.trim();
+  if(!msg)return;
+  inp.value='';
+  addM(msg,'mu');
+  hist.push({role:'user',content:msg});
+  document.getElementById('cty').classList.add('sh');
+  scrollC();
+  try{
+    const res=await fetch('/api/chat',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        messages:[
+          ...hist.slice(-6)
+        ]
+      })
+    });
+    const d=await res.json();
+    document.getElementById('cty').classList.remove('sh');
+    if(d.content){
+      addM(d.content,'mb');
+      hist.push({role:'assistant',content:d.content});
+    }else{
+      throw new Error('No content in response');
+    }
+  }catch(e){
+    document.getElementById('cty').classList.remove('sh');
+    const localResp = getLocalResponse(msg);
+    addM(localResp,'mb');
+    hist.push({role:'assistant',content:localResp});
+  }
+  scrollC();
+}
+
+function addM(t,cls){
+  const d=document.createElement('div');
+  d.className=cls;
+  let formatted = t
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  d.innerHTML=formatted;
+  document.getElementById('cm').appendChild(d);
+  scrollC();
+}
+function scrollC(){const m=document.getElementById('cm');m.scrollTop=m.scrollHeight;}
+
+/* MARQUEE */
+const mq=document.getElementById('mqt');
+mq.innerHTML+=mq.innerHTML;
+</script>
+</body>
+</html>
