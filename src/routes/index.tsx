@@ -1,24 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Klassick Media — Elite Video Production Agency" },
+      {
+        name: "description",
+        content:
+          "Klassick Media — elite video production agency. Cinematic music videos, 3D animation, real estate films, SaaS explainers, motion graphics, and YouTube direction with a global team of 50+ creators.",
+      },
+      { property: "og:title", content: "Klassick Media — Elite Video Production Agency" },
+      {
+        property: "og:description",
+        content:
+          "Concept to conversion. Music videos, 3D/VFX, real estate cinematics, SaaS explainers, and YouTube direction — delivered by a 50+ member global team.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <iframe
+      src="/site.html"
+      title="Klassick Media"
+      style={{
+        position: "fixed",
+        inset: 0,
+        width: "100vw",
+        height: "100vh",
+        border: "none",
+        margin: 0,
+        padding: 0,
+        display: "block",
+        background: "#050508",
+      }}
+      allow="autoplay; fullscreen; encrypted-media; clipboard-write"
+    />
   );
 }
