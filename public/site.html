@@ -26,7 +26,7 @@ body.ch #cr{width:60px;height:60px;border-color:var(--vl);box-shadow:inset 0 0 2
 
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 4rem;background:rgba(5,5,8,.85);backdrop-filter:blur(30px);border-bottom:1px solid var(--gb);transition:all .35s;box-shadow:0 8px 32px rgba(0,0,0,.3);}
 nav.sh{padding:.7rem 4rem;background:rgba(5,5,8,.95);}
-@media(max-width:900px){nav{padding:1rem 1.5rem;}nav.sh{padding:.6rem 1.5rem;}}
+@media(max-width:900px){nav{padding:.85rem 1rem;}nav.sh{padding:.55rem 1rem;}}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.15em;background:linear-gradient(135deg,#ff006e,var(--vl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;font-weight:800;animation:glowText 3s ease-in-out infinite;}
 @keyframes glowText{0%,100%{filter:drop-shadow(0 0 0px rgba(255,0,110,.5));}50%{filter:drop-shadow(0 0 15px rgba(255,0,110,.8));}}
 .nl{display:flex;gap:2.4rem;list-style:none;}
@@ -39,6 +39,24 @@ nav.sh{padding:.7rem 4rem;background:rgba(5,5,8,.95);}
 .ncta:hover::before{transform:translateX(100%);}
 .ncta:hover{box-shadow:0 12px 40px rgba(255,0,110,.4),0 0 25px rgba(123,127,212,.3);transform:translateY(-3px);}
 
+/* HAMBURGER — mobile nav */
+.hbg{display:none;background:none;border:none;flex-direction:column;gap:5px;cursor:pointer;padding:.55rem;z-index:1001;}
+.hbg span{display:block;width:24px;height:2px;background:linear-gradient(90deg,#ff006e,var(--vl));border-radius:2px;transition:all .3s;}
+.hbg.op span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.op span:nth-child(2){opacity:0;}
+.hbg.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:900px){
+  .hbg{display:flex;}
+  .logo{font-size:1.35rem;letter-spacing:.1em;}
+  .ncta{padding:.5rem 1rem;font-size:.6rem;letter-spacing:.1em;}
+  .nl{position:fixed;top:0;right:-100%;width:78vw;max-width:320px;height:100vh;background:rgba(5,5,8,.98);backdrop-filter:blur(30px);flex-direction:column;gap:.4rem;padding:5rem 1.6rem 2rem;border-left:1px solid var(--gb);box-shadow:-20px 0 60px rgba(0,0,0,.7);transition:right .35s ease;overflow-y:auto;z-index:1000;}
+  .nl.mo{right:0;}
+  .nl li{width:100%;border-bottom:1px solid rgba(123,127,212,.12);}
+  .nl a{display:block;padding:1rem .4rem;font-size:.85rem;letter-spacing:.14em;color:rgba(245,245,247,.85);}
+  .nl a::after{display:none;}
+}
+@media(max-width:400px){.ncta{padding:.45rem .8rem;font-size:.55rem;} .logo{font-size:1.2rem;}}
+
 #hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 #hc{position:absolute;inset:0;z-index:1;}
 #filmGrain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");opacity:.15;pointer-events:none;z-index:2;}
@@ -48,7 +66,9 @@ nav.sh{padding:.7rem 4rem;background:rgba(5,5,8,.95);}
 @keyframes badgeSlide{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
 .hbadge i{width:8px;height:8px;border-radius:50%;background:#4cd98a;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,217,138,.7);}50%{box-shadow:0 0 0 8px rgba(76,217,138,0);}}
-.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.8rem,12vw,10.5rem);line-height:.85;letter-spacing:.05em;background:linear-gradient(170deg,#ff006e 0%,#fff 25%,var(--vl) 60%,var(--vd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:0;animation:titleReveal .95s .4s forwards;text-shadow:0 0 40px rgba(255,0,110,.2);}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,12vw,10.5rem);line-height:.85;letter-spacing:.05em;background:linear-gradient(170deg,#ff006e 0%,#fff 25%,var(--vl) 60%,var(--vd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:0;animation:titleReveal .95s .4s forwards,heroTilt 7s ease-in-out .4s infinite;text-shadow:0 0 40px rgba(255,0,110,.2);transform-style:preserve-3d;perspective:1200px;cursor:pointer;transition:transform .5s;will-change:transform;}
+.htitle:hover{animation-play-state:paused;transform:perspective(1200px) rotateY(18deg) rotateX(-6deg) scale(1.04);filter:drop-shadow(0 20px 40px rgba(255,0,110,.5));}
+@keyframes heroTilt{0%,100%{transform:perspective(1200px) rotateY(-6deg) rotateX(2deg);}50%{transform:perspective(1200px) rotateY(6deg) rotateX(-2deg);}}
 @keyframes titleReveal{from{opacity:0;transform:translateY(50px) scaleY(.8);}to{opacity:1;transform:translateY(0) scaleY(1);}}
 .hsub{font-size:clamp(.9rem,1.9vw,1.15rem);color:rgba(245,245,247,.58);margin-top:1.8rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.85;opacity:0;animation:fadeInUp .8s .7s forwards;}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
@@ -81,7 +101,7 @@ section{padding:7rem 4rem;position:relative;}
 
 #stats{padding:4rem 4rem;}
 .sg{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--gb);border:1px solid var(--gb);border-radius:6px;overflow:hidden;}
-@media(max-width:900px){.sg{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){.sg{grid-template-columns:repeat(2,1fr);}.sg .si:nth-child(5){grid-column:span 2;}}
 .si{background:var(--k);padding:2.5rem 1.2rem;text-align:center;transition:all .4s;border:1px solid transparent;position:relative;overflow:hidden;}
 .si::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,110,.1),transparent);opacity:0;transition:opacity .4s;}
 .si:hover{background:var(--vg);border-color:var(--v);transform:translateY(-8px);}
@@ -337,7 +357,7 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
 <div id="vmod"><div class="vminn" id="vminn"><button class="vmc" onclick="VM.close()">✕</button><video id="vmi" controls autoplay style="width:100%; height:100%; object-fit:contain; outline:none; background:#000;"></video></div></div>
 
 <nav id="nav">
-  <a href="#" class="logo">KLASSICK<span style="color:#ff006e;">.</span>MEDIA</a>
+  <a href="#" class="logo">KLASSICK<span style="display:inline-block;width:.35em;"></span>MEDIA</a>
   <ul class="nl" id="nl">
     <li><a href="#services">Services</a></li>
     <li><a href="#mv">Direction</a></li>
@@ -349,7 +369,7 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="mailto:klassickmedia.support@gmail.com" class="ncta">Book a Meet ✦</a>
-  <button class="hbg" id="hbg" onclick="document.getElementById('nl').classList.toggle('mo')">
+  <button class="hbg" id="hbg" aria-label="Toggle menu" onclick="this.classList.toggle('op');document.getElementById('nl').classList.toggle('mo');">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -408,6 +428,8 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
       <div class="sc rv"><span class="scn">04</span><span class="sci">📸</span><h3 class="sct">Thumbnail Design</h3><p class="scd">Psychology-driven CTR optimization. A/B testing variants. Platform-specific designs that stop scrolls and drive clicks.</p><div class="scs"><div class="scst"><div class="scsd"></div>CTR Psychology Design</div><div class="scst"><div class="scsd"></div>A/B Testing Variants</div><div class="scst"><div class="scsd"></div>Platform Optimization</div><div class="scst"><div class="scsd"></div>Brand Consistency</div></div></div>
       <div class="sc rv d1"><span class="scn">05</span><span class="sci">📊</span><h3 class="sct">Digital Marketing & Distribution</h3><p class="scd">Multi-platform delivery strategy. YouTube SEO, social media scheduling, paid ads optimization, audience targeting.</p><div class="scs"><div class="scst"><div class="scsd"></div>YouTube SEO Strategy</div><div class="scst"><div class="scsd"></div>Social Media Scheduling</div><div class="scst"><div class="scsd"></div>Paid Ads Management</div><div class="scst"><div class="scsd"></div>Audience Targeting</div></div></div>
       <div class="sc rv d2"><span class="scn">06</span><span class="sci">📈</span><h3 class="sct">Analytics & Optimization</h3><p class="scd">Real-time retention tracking. Viewer drop-off analysis. Continuous optimization for maximum watch time and conversion.</p><div class="scs"><div class="scst"><div class="scsd"></div>Retention Analytics</div><div class="scst"><div class="scsd"></div>Drop-off Analysis</div><div class="scst"><div class="scsd"></div>Performance Optimization</div><div class="scst"><div class="scsd"></div>ROI Tracking</div></div></div>
+      <div class="sc rv"><span class="scn">07</span><span class="sci">📡</span><h3 class="sct">Broadcasting Services</h3><p class="scd">End-to-end broadcast production for TV, OTT, and live streaming. Multi-camera setups, live switching, satellite uplink and studio-grade delivery.</p><div class="scs"><div class="scst"><div class="scsd"></div>Live Multi-Cam Production</div><div class="scst"><div class="scsd"></div>OTT & TV Channel Delivery</div><div class="scst"><div class="scsd"></div>Studio & Green Screen Setup</div><div class="scst"><div class="scsd"></div>Live Streaming & Simulcast</div></div></div>
+      <div class="sc rv d1"><span class="scn">08</span><span class="sci">🎤</span><h3 class="sct">Music Video Production</h3><p class="scd">For singers, musicians and rappers — we direct, shoot and cinematically craft music videos that visualize your sound. From audio to full visual story.</p><div class="scs"><div class="scst"><div class="scsd"></div>Concept & Cinematic Direction</div><div class="scst"><div class="scsd"></div>Full Crew Music Video Shoot</div><div class="scst"><div class="scsd"></div>Choreography & Set Design</div><div class="scst"><div class="scsd"></div>Post, VFX & Color Grade</div></div></div>
     </div>
   </div>
 </section>
@@ -464,6 +486,8 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
       <button class="pfb" data-f="real-estate">Real Estate</button>
       <button class="pfb" data-f="brand">Brand & SaaS</button>
       <button class="pfb" data-f="vfx">3D & VFX</button>
+      <button class="pfb" data-f="ai">AI Video</button>
+      <button class="pfb" data-f="motion">Motion Graphics</button>
     </div>
     <div class="pfg" id="pfg">
       <!-- Dynamically loaded from local data array -->
@@ -670,7 +694,7 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
 </section>
 
 <footer>
-  <div class="fl">KLASSICK<span style="color:#ff006e;">.</span>MEDIA</div>
+  <div class="fl">KLASSICK<span style="display:inline-block;width:.35em;"></span>MEDIA</div>
   <div style="display:flex; gap:1.5rem; justify-content:center; align-items:center;">
     <a href="https://www.instagram.com/klassickmedia/?utm_source=ig_web_button_share_sheet" target="_blank" class="fwa">Instagram ↗</a>
     <a href="https://t.me/YourstrulyVikasMishra" target="_blank" class="fwa">Telegram ↗</a>
@@ -708,21 +732,11 @@ footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items
 /* INLINE DATA STORE */
 const KLASSICK_DATA = {
   portfolioVideos: [
-    // 3D Animation & Visual Effects
-    {
-      id: 1,
-      category: 'vfx',
-      delayClass: '',
-      videoUrl: 'Tenali Raman - Expert Animators (1080p, h264).mp4',
-      videoType: 'local',
-      title: 'Tenali Raman Animation',
-      clientInfo: '3D VIDEOS ANIMATION',
-      editor: 'Harshit Shah'
-    },
+    // Real Estate opens the reel (Tenali Raman moved to middle of grid)
     {
       id: 2,
       category: 'vfx',
-      delayClass: 'd1',
+      delayClass: '',
       videoUrl: 'WhatsApp Video 2026-06-28 at 1.57.54 AM.mp4',
       videoType: 'local',
       title: '3D Character Showcase',
@@ -733,7 +747,7 @@ const KLASSICK_DATA = {
     {
       id: 3,
       category: 'real-estate',
-      delayClass: 'd2',
+      delayClass: 'd1',
       videoUrl: '022daf3ebe07bdf35ddb98d79c2fffdd.mp4',
       videoType: 'local',
       title: 'Luxury Villa Cinematic',
@@ -743,12 +757,23 @@ const KLASSICK_DATA = {
     {
       id: 4,
       category: 'real-estate',
-      delayClass: '',
+      delayClass: 'd2',
       videoUrl: '2829c6fc5ae9a6cd94b13fb83c66d868.mp4',
       videoType: 'local',
       title: 'Modern Property Showcase',
       clientInfo: 'REAL ESTATE VIDEOS',
       editor: 'Sangram Jadhav'
+    },
+    // Tenali Raman — moved to middle of the grid
+    {
+      id: 1,
+      category: 'vfx',
+      delayClass: '',
+      videoUrl: 'Tenali Raman - Expert Animators (1080p, h264).mp4',
+      videoType: 'local',
+      title: 'Tenali Raman Animation',
+      clientInfo: '3D VIDEOS ANIMATION',
+      editor: 'Harshit Shah'
     },
     {
       id: 5,
@@ -815,7 +840,7 @@ const KLASSICK_DATA = {
     // Motion Graphics & Animation
     {
       id: 11,
-      category: 'vfx',
+      category: 'motion',
       delayClass: 'd1',
       videoUrl: '6b4710614ba7ed4cf05921d16d969caf.mp4',
       videoType: 'local',
@@ -825,7 +850,7 @@ const KLASSICK_DATA = {
     },
     {
       id: 12,
-      category: 'vfx',
+      category: 'motion',
       delayClass: 'd2',
       videoUrl: '9034075b93e43107d2f21b14e9ea9a0a.mp4',
       videoType: 'local',
@@ -836,7 +861,7 @@ const KLASSICK_DATA = {
     // AI-Enhanced Content
     {
       id: 13,
-      category: 'shorts',
+      category: 'ai',
       delayClass: '',
       videoUrl: 'Ai-Reel-Collagen-2.mp4',
       videoType: 'local',
@@ -846,7 +871,7 @@ const KLASSICK_DATA = {
     },
     {
       id: 14,
-      category: 'shorts',
+      category: 'ai',
       delayClass: 'd1',
       videoUrl: 'Tyrion Lannisterr-9x16.mp4',
       videoType: 'local',
@@ -897,7 +922,13 @@ const KLASSICK_DATA = {
     { initials: 'RO', name: 'Retention Analytics', exp: '5+ Yrs Exp', skills: 'Drop-off Optimization', delay: '' },
     { initials: 'PP', name: 'Pre-Production Setup', exp: '9+ Yrs Exp', skills: 'Casting & Location Hunt', delay: 'd1' },
     { initials: 'QA', name: 'Quality Assurance', exp: '7+ Yrs Exp', skills: 'Pacing & QC Audits', delay: 'd2' },
-    { initials: 'CR', name: 'Client Relations', exp: '10+ Yrs Exp', skills: 'Project Managers, Setup', delay: 'd3' }
+    { initials: 'CR', name: 'Client Relations', exp: '10+ Yrs Exp', skills: 'Project Managers, Setup', delay: 'd3' },
+    { initials: 'BC', name: 'Broadcast & Live Ops', exp: '9+ Yrs Exp', skills: 'Multi-Cam, OTT, Uplink', delay: '' },
+    { initials: 'MV', name: 'Music Video Direction', exp: '8+ Yrs Exp', skills: 'Concept, Choreo, Shoot', delay: 'd1' },
+    { initials: 'AI', name: 'AI Video Lab', exp: '4+ Yrs Exp', skills: 'Runway, Sora, Kling, Comfy', delay: 'd2' },
+    { initials: 'GR', name: 'Grip & Lighting', exp: '10+ Yrs Exp', skills: 'HMI, LED Walls, Rigging', delay: 'd3' },
+    { initials: 'AR', name: 'AR / VR / Virtual Sets', exp: '6+ Yrs Exp', skills: 'Unreal Engine, LED Volume', delay: '' },
+    { initials: 'LG', name: 'Legal & Rights Mgmt', exp: '12+ Yrs Exp', skills: 'Licensing, IP, Contracts', delay: 'd1' }
   ]
 };
 
@@ -1220,8 +1251,20 @@ const VM={open(url,type,poster=''){const inn=document.getElementById('vminn');if
 document.getElementById('vmod').addEventListener('click',function(e){if(e.target===this)VM.close();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')VM.close();});
 
-/* FEEDBACK */
-function submitFB(){const t=document.getElementById('ixt').value.trim();if(!t)return;document.getElementById('ixt').value='';document.getElementById('ixc').selectedIndex=0;const ok=document.getElementById('iok');ok.style.display='block';setTimeout(()=>ok.style.display='none',5000);}
+/* FEEDBACK — opens user's mail client, delivering feedback straight to Klassick Media inbox */
+function submitFB(){
+  const t=document.getElementById('ixt').value.trim();
+  if(!t)return;
+  const c=document.getElementById('ixc').value||'General Feedback';
+  const subject=encodeURIComponent(`[Klassick Media Feedback] ${c}`);
+  const body=encodeURIComponent(`Category: ${c}\n\nFeedback:\n${t}\n\n— Sent from klassickmedia.lovable.app`);
+  window.location.href=`mailto:klassickmedia.support@gmail.com?subject=${subject}&body=${body}`;
+  document.getElementById('ixt').value='';
+  document.getElementById('ixc').selectedIndex=0;
+  const ok=document.getElementById('iok');
+  ok.style.display='block';
+  setTimeout(()=>ok.style.display='none',6000);
+}
 
 /* CHATBOT */
 let co=false;
