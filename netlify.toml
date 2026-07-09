@@ -1,0 +1,8 @@
+[build]
+  command = "npm install && npm run build"
+  publish = ".output/public"
+  functions = ".netlify/functions-internal"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "22"
