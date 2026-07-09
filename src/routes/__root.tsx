@@ -77,12 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Klassick Media — Elite Video Production Agency" },
-      { name: "description", content: "Elite video production agency — music videos, 3D animation, real estate films, SaaS explainers, and YouTube direction from a 50+ member global team." },
+      { title: "Klassick Media" },
+      { name: "description", content: "Klassick Media — elite video production agency for music videos, 3D animation, real estate films, and SaaS explainers." },
       { name: "author", content: "Klassick Media" },
-      { property: "og:title", content: "Klassick Media — Elite Video Production Agency" },
-      { property: "og:description", content: "Concept to conversion. Cinematic content by a 50+ member global team." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Klassick Media" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -91,6 +90,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Klassick Media",
+          url: "https://klassickmedia.lovable.app",
+          logo: "https://klassickmedia.lovable.app/favicon.ico",
+          description:
+            "Elite video production agency delivering music videos, 3D animation, real estate cinematics, SaaS explainers, and YouTube direction.",
+          sameAs: [],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
