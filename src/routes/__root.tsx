@@ -130,6 +130,24 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const kill = () => {
+      const nodes = document.querySelectorAll(
+        '[id*="lovable-badge" i],[class*="lovable-badge" i],a[href*="lovable.dev"][target="_blank"]'
+      );
+      nodes.forEach((n) => n.remove());
+    };
+    kill();
+    const obs = new MutationObserver(kill);
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+    const interval = window.setInterval(kill, 1000);
+    return () => {
+      obs.disconnect();
+      window.clearInterval(interval);
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
