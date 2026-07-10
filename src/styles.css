@@ -2,6 +2,21 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Hide Lovable badge injected on published deployments */
+#lovable-badge,
+#Lovable-Badge,
+[id*="lovable-badge" i],
+[class*="lovable-badge" i],
+a[href*="lovable.dev"][target="_blank"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
