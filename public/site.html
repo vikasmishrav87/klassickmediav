@@ -1244,13 +1244,15 @@ const VM={open(url,type,poster=''){const inn=document.getElementById('vminn');if
     document.querySelectorAll('video').forEach(v=>{const s=v.getAttribute('src');if(s && !v.classList.contains('hero-bg-video'))urls.add(s);});
     return [...urls];
   }
+  // Warm ~3MB per video into the HTTP cache. Enough for the modal's initial
+  // play() to satisfy `canplay` from cache without a fresh network round-trip.
   function warm(url){
     if(!url || (typeof preloadedUrls!=='undefined' && preloadedUrls.has(url))) return;
     if(typeof preloadedUrls!=='undefined') preloadedUrls.add(url);
-    try{fetch(url,{method:'GET',headers:{Range:'bytes=0-524287'},mode:'cors',credentials:'omit'}).catch(()=>{});}catch(e){}
-    const v=document.createElement('video');v.preload='auto';v.muted=true;v.src=url;try{v.load();}catch(e){}
+    try{fetch(url,{method:'GET',headers:{Range:'bytes=0-3145727'},mode:'cors',credentials:'omit'}).catch(()=>{});}catch(e){}
   }
-  function run(){const urls=collect();let i=0;const step=()=>{const end=Math.min(i+3,urls.length);for(;i<end;i++)warm(urls[i]);if(i<urls.length)setTimeout(step,700);};step();}
+  // Sequential, one at a time — parallel warming would re-saturate the pipe.
+  function run(){const urls=collect();let i=0;const step=()=>{if(i>=urls.length)return;warm(urls[i++]);setTimeout(step,400);};step();}
   window.addEventListener('load',()=>{if('requestIdleCallback' in window){requestIdleCallback(run,{timeout:2500});}else{setTimeout(run,1800);}});
 })();
 document.getElementById('vmod').addEventListener('click',function(e){if(e.target===this)VM.close();});
