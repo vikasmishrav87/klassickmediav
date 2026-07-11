@@ -983,7 +983,9 @@ function resolveStaticVideos() {
       video.playsInline = true;
       video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
-      video.setAttribute('preload', 'auto');
+      // Off-screen cards use metadata only; idle prefetch warms real bytes.
+      // Prevents 19 large files from stampeding the network and starving the modal.
+      video.setAttribute('preload', 'metadata');
     }
   });
   
