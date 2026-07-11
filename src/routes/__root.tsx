@@ -98,8 +98,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Klassick Media",
-          url: "https://klassickmedia.lovable.app",
-          logo: "https://klassickmedia.lovable.app/favicon.ico",
+          url: "https://klassickmedia.netlify.app",
+          logo: "https://klassickmedia.netlify.app/favicon.ico",
           description:
             "Elite video production agency delivering music videos, 3D animation, real estate cinematics, SaaS explainers, and YouTube direction.",
           sameAs: [],

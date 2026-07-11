@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
         content:
           "Concept to conversion. Music videos, 3D/VFX, real estate cinematics, SaaS explainers, and YouTube direction — delivered by a 50+ member global team.",
       },
-      { property: "og:url", content: "https://klassickmedia.lovable.app/" },
+      { property: "og:url", content: "https://klassickmedia.netlify.app/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Klassick Media — Elite Video Production Agency" },
       { name: "twitter:description", content: "Cinematic content by a 50+ member global team. Music videos, 3D, real estate, SaaS, YouTube direction." },
     ],
-    links: [{ rel: "canonical", href: "https://klassickmedia.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://klassickmedia.netlify.app/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Klassick Media",
-          url: "https://klassickmedia.lovable.app/",
+          url: "https://klassickmedia.netlify.app/",
         }),
       },
       {
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "Klassick Media",
-          url: "https://klassickmedia.lovable.app/",
+          url: "https://klassickmedia.netlify.app/",
           description:
             "Elite video production agency: music videos, 3D animation, real estate cinematics, SaaS explainers, motion graphics, broadcasting, podcasting, and YouTube direction.",
           areaServed: "Worldwide",
