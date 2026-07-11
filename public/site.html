@@ -983,7 +983,9 @@ function resolveStaticVideos() {
       video.playsInline = true;
       video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
-      video.setAttribute('preload', 'auto');
+      // Off-screen cards use metadata only; idle prefetch warms real bytes.
+      // Prevents 19 large files from stampeding the network and starving the modal.
+      video.setAttribute('preload', 'metadata');
     }
   });
   
@@ -1010,7 +1012,7 @@ function renderPortfolio() {
       <div class="pi ${v.id===1||v.id===9?'ft':''} rv ${v.delayClass}" data-c="${v.category}" onclick="VM.open('${resolvedUrl}', '${v.videoType}', '${posterUrl}')">
         <div class="pmedia">
           <img class="pimg" src="${posterUrl}" alt="${v.title} video thumbnail" loading="eager" decoding="async" fetchpriority="${v.id <= 6 ? 'high' : 'auto'}">
-          <video src="${resolvedUrl}" poster="${posterUrl}" preload="auto" muted playsinline onloadedmetadata="this.currentTime = 2;" oncanplay="this.classList.add('is-ready');" onplaying="this.classList.add('is-ready');"></video>
+          <video src="${resolvedUrl}" poster="${posterUrl}" preload="metadata" muted playsinline onloadedmetadata="this.currentTime = 2;" oncanplay="this.classList.add('is-ready');" onplaying="this.classList.add('is-ready');"></video>
         </div>
         <div class="pov">
           <div class="ptag">${v.clientInfo}</div>
@@ -1138,8 +1140,9 @@ function initHeroSlideshow() {
     }
   }
   
-  // Rotate every 1.5s (2.25s of video time at 1.5x) so all 14 cycle within 21s
-  setInterval(transition, 1500);
+  // Rotate every 8s. Faster rotation was fetching a fresh 20–90MB file every
+  // 1.5s, saturating the network and starving portfolio/modal video loads.
+  setInterval(transition, 8000);
 }
 
 
@@ -1241,13 +1244,15 @@ const VM={open(url,type,poster=''){const inn=document.getElementById('vminn');if
     document.querySelectorAll('video').forEach(v=>{const s=v.getAttribute('src');if(s && !v.classList.contains('hero-bg-video'))urls.add(s);});
     return [...urls];
   }
+  // Warm ~3MB per video into the HTTP cache. Enough for the modal's initial
+  // play() to satisfy `canplay` from cache without a fresh network round-trip.
   function warm(url){
     if(!url || (typeof preloadedUrls!=='undefined' && preloadedUrls.has(url))) return;
     if(typeof preloadedUrls!=='undefined') preloadedUrls.add(url);
-    try{fetch(url,{method:'GET',headers:{Range:'bytes=0-524287'},mode:'cors',credentials:'omit'}).catch(()=>{});}catch(e){}
-    const v=document.createElement('video');v.preload='auto';v.muted=true;v.src=url;try{v.load();}catch(e){}
+    try{fetch(url,{method:'GET',headers:{Range:'bytes=0-3145727'},mode:'cors',credentials:'omit'}).catch(()=>{});}catch(e){}
   }
-  function run(){const urls=collect();let i=0;const step=()=>{const end=Math.min(i+3,urls.length);for(;i<end;i++)warm(urls[i]);if(i<urls.length)setTimeout(step,700);};step();}
+  // Sequential, one at a time — parallel warming would re-saturate the pipe.
+  function run(){const urls=collect();let i=0;const step=()=>{if(i>=urls.length)return;warm(urls[i++]);setTimeout(step,400);};step();}
   window.addEventListener('load',()=>{if('requestIdleCallback' in window){requestIdleCallback(run,{timeout:2500});}else{setTimeout(run,1800);}});
 })();
 document.getElementById('vmod').addEventListener('click',function(e){if(e.target===this)VM.close();});
