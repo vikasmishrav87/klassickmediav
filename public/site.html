@@ -1140,8 +1140,9 @@ function initHeroSlideshow() {
     }
   }
   
-  // Rotate every 1.5s (2.25s of video time at 1.5x) so all 14 cycle within 21s
-  setInterval(transition, 1500);
+  // Rotate every 8s. Faster rotation was fetching a fresh 20–90MB file every
+  // 1.5s, saturating the network and starving portfolio/modal video loads.
+  setInterval(transition, 8000);
 }
 
 
